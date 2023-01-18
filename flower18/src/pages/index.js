@@ -1,7 +1,5 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
+
+
 import ReactStars from "react-stars";
 import React, { useState, useEffect } from "react";
 
@@ -253,6 +251,8 @@ const aboutUs = [
   },
 ];
 
+
+
 export default function Home() {
   const [show, setShow] = useState(false);
   const { isOpen, onToggle } = useDisclosure();
@@ -275,6 +275,7 @@ export default function Home() {
         <link rel="icon" href="/logo.PNG" />
       </Head>
       <main className={styles.main}>
+
         <div>
           <img src="https://images.contentstack.io/v3/assets/bltdd99f24e8a94d536/blt0e98fd147de5199a/631a53cd10c00a57bb0cd53d/birthday-flowers-hero-fy23-fall.jpg?quality=75&auto=webp&optimize={medium}" />
         </div>
@@ -510,9 +511,8 @@ export default function Home() {
               <li>
                 How to Preserve Flowers in WaxHow to Preserve Flowers in Wax
               </li>
-            </ul>
-          </Box>
-        </Collapse>
+              
+      
       </main>
     </>
   );

@@ -1,9 +1,9 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -104,4 +104,220 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+/* -----------------------------Navbar------------------------------- */
+.navbar {
+  width: 100%;
+  height: 20px;
+  background-color: #65388b;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+.navbar1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.navbar1 > a {
+  padding: 4px;
+  margin-right: 20px;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 200;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+.navbar2 {
+  display: flex;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  align-items: center;
+}
+.nav2img {
+  flex: 1;
+  padding: 8px;
+  border-right: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+.nav2img:hover {
+  cursor: pointer;
+  border-bottom: 2px solid black;
+}
+.navbar3 {
+  background-color: white;
+  display: flex;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: space-around;
+}
+.img {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+}
+.inputbtn {
+  flex: 5;
+  display: flex;
+  align-items: center;
+}
+.inputbtn > input {
+  width: 100%;
+  border: 2px solid #aaa;
+  background-color: white;
+  color: black;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+.inputbtn > input:focus {
+  border-color: dodgerBlue;
+  box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+.inputbtn > button {
+  align-items: center;
+  justify-content: center;
+  background-color: #65388b;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  padding: 8px;
+  height: 33px;
+  cursor: pointer;
+}
+.logoname {
+  flex: 3;
+  display: flex;
+}
+.nth {
+  margin: auto;
+  margin-right: 4px;
+  font-size: 28px;
+  color: gray;
+}
+.child {
+  /* border: 1px solid red; */
+  color: black;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: gray;
+}
+/* ------------ */
+.navbar4 {
+  width: 100%;
+  height: auto;
+  border-top: 2px solid black;
+  background-color: white;
+  /* display: flex; */
+}
+nav {
+  background: white;
+  /* position: fixed; */
+  width: 100%;
+  z-index: 999;
+  height: 65px;
+  line-height: 65px;
+  font-family: sans-serif;
+}
+nav .wrapper {
+  position: relative;
+  max-width: 1250px;
+  padding: 0 30px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper .logo a {
+  color: black;
+  text-decoration: none;
+  font-size: 27px;
+  font-weight: 600;
+  font-family: sans-serif;
+}
+
+.wrapper .nav-links {
+  display: inline-flex;
+}
+.nav-links li {
+  list-style: none;
+}
+.nav-links li a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 9px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.nav-links li a:hover {
+  background: #b277e2;
+  color: white;
+}
+.nav-links li:hover .mega-box {
+  top: 65px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+
+.mega-box {
+  position: absolute;
+  top: 85px;
+  color: black;
+  width: 100%;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.mega-box .content {
+  background: white;
+  padding: 25px 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.content .row {
+  width: calc(25% - 30px);
+  line-height: 40px;
+}
+.content .row img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content .row header {
+  color: rgb(7, 7, 7);
+  font-size: 20px;
+  font-weight: 550;
+}
+.content .row .mega-links {
+  margin-left: -40px;
+  /* border-left: 2px solid rgba(255, 255, 255, 0.09); */
+}
+.content .row:nth-child(1),
+.content .row:nth-child(2) {
+  border-left: 0px;
+}
+.row .mega-links li {
+  padding: 0 20px;
+}
+.row .mega-links li a {
+  padding: 0 20px;
+  font-size: 17px;
+  display: block;
+}
+.row .mega-links li a:hover {
+  color: white;
 }
