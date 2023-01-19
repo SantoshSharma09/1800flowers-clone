@@ -4,15 +4,20 @@ import { ImLocation } from "react-icons/im";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineLocalShipping } from "react-icons/md";
 import { CgShoppingCart } from "react-icons/cg";
+import useAuth from "./../useAuth";
 
 export default function Navbar() {
+  const currentUser = useAuth();
+
+  // console.log(currentUser);
+
   return (
     <div className="navbar">
       <div className="navbar1">
         <a>Corporate Gifts</a>
         <a>
           Store Locator
-          <ImLocation />
+          {/* <ImLocation /> */}
         </a>
         <a>international Delivery</a>
       </div>
@@ -113,9 +118,15 @@ export default function Navbar() {
         <div className="logoname">
           <div className="child">
             <div>
+              <MdOutlineLocalShipping className="nth" />
+            </div>
+            <p>Logout</p>
+          </div>
+          <div className="child">
+            <div>
               <CgProfile className="nth" />
             </div>
-            <p>Profile</p>
+            <a href="#">{currentUser ? currentUser?.displayName : "Profile"}</a>
           </div>
           <div className="child">
             <div>
