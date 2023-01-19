@@ -10,13 +10,15 @@ import { FaHeadset } from "react-icons/fa";
 import {
   Box,
   Button,
+  Center,
   Collapse,
   Heading,
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import Head from "next/head";
-
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 const data = [
   {
     id: 1,
@@ -177,21 +179,21 @@ const trending = [
     id: 3,
     image:
       "https://cdn1.1800flowers.com/wcsstore/Flowers/images/catalog/100547sbdv3ch29z.jpg?quality=75&auto=webp&optimize={medium}",
-    title: "Magnificent Pink Rose & Lily Bouquet",
+    title: "Two Dozen Assorte...",
     price: "Starting From $54.99",
   },
   {
     id: 4,
     image:
       "https://cdn1.1800flowers.com/wcsstore/Flowers/images/catalog/191252xlz.jpg?quality=75&auto=webp&optimize={medium}",
-    title: "Garden of Grandeur®",
+    title: "Garden of Grandeu...",
     price: " Starting From $74.99",
   },
   {
     id: 5,
     image:
       "https://cdn2.1800flowers.com/wcsstore/Flowers/images/catalog/90926mrdv4ch31z.jpg?quality=75&auto=webp&optimize={medium}",
-    title: "Two Dozen Red Roses",
+    title: "Two Dozen Red Ro...",
     price: "Starting From $59.99",
   },
   {
@@ -205,7 +207,7 @@ const trending = [
     id: 7,
     image:
       "https://cdn3.1800flowers.com/wcsstore/Flowers/images/catalog/191173xlz.jpg?quality=75&auto=webp&optimize={medium}",
-    title: "Lovely Lavender Medle...",
+    title: "Lovely Lavender M...",
     price: "Starting From $49.99",
   },
 ];
@@ -270,30 +272,66 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.PNG" />
       </Head>
-      <main className={styles.main} style={{ marginTop: "200px" }}>
-        <div>
+      <Navbar />
+      <div style={{ marginTop: "280px" }}>
+        <div style={{ width: "100%" }}>
           <img src="https://images.contentstack.io/v3/assets/bltdd99f24e8a94d536/blt0e98fd147de5199a/631a53cd10c00a57bb0cd53d/birthday-flowers-hero-fy23-fall.jpg?quality=75&auto=webp&optimize={medium}" />
         </div>
         <div>
-          <h3>Send Flowers & Exclusive Gift</h3>
-          <div style={{ display: "flex" }}>
+          <h1
+            style={{
+              fontSize: "33px",
+              fontWeight: "600",
+              fontFamily: "PlayfairDisplayBold,serif",
+              textAlign: "center",
+              marginTop: "50px",
+              marginBottom: "30px",
+            }}
+          >
+            Send Flowers & Exclusive Gift
+          </h1>
+          <div
+            style={{ display: "flex", width: "100%", padding: "0 50px 0 50px" }}
+          >
             {data.map((dat) => (
               <div style={{ textAlign: "center" }} key={dat.id}>
-                <img src={dat.image} />
+                <img style={{ width: "100%" }} src={dat.image} />
                 <p>{dat.title}</p>
               </div>
             ))}
           </div>
         </div>
-        <div>
-          <img src="./banner1.PNG" />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            margin: "40px 0 40px 0",
+          }}
+        >
+          <img style={{ width: "80%" }} src="./banner1.PNG" />
         </div>
+
         <div>
-          <img src="https://www.1800flowers.com/floral-embrace-191167" />
-        </div>
-        <div>
-          <h3>Offer Comfort With Sympathy Flowers & Gifts</h3>
-          <div style={{ display: "flex" }}>
+          <h1
+            style={{
+              fontSize: "33px",
+              fontWeight: "600",
+              fontFamily: "PlayfairDisplayBold,serif",
+              textAlign: "center",
+              marginTop: "50px",
+              marginBottom: "20px",
+            }}
+          >
+            Offer Comfort With Sympathy Flowers & Gifts
+          </h1>
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              padding: "0 50px 0 50px",
+              marginBottom: "50px",
+            }}
+          >
             {offer.map((dat) => (
               <div style={{ textAlign: "center" }} key={dat.id}>
                 <img src={dat.image} />
@@ -302,20 +340,44 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div style={{ display: "flex" }}>
-          <div>
+        <div style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
+          <div style={{ width: "38%" }}>
             <img src="https://images.contentstack.io/v3/assets/bltdd99f24e8a94d536/blt4e2cd58eaa3200f8/63afaf864efa494a5213dfdd/orchid-flowers-foty-tier-fy23.jpg?quality=60&auto=webp&optimize={medium}" />
           </div>
-          <div>
+          <div style={{ width: "38%" }}>
             <img src="https://images.contentstack.io/v3/assets/bltdd99f24e8a94d536/blt68280c5448a46856/63afafc33d631e106c3e825a/calathea-rattlesnake-poty-tier-fy23.jpg?quality=60&auto=webp&optimize={medium}" />
           </div>
         </div>
-        <div>
-          <img src="./banner2.PNG" />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            margin: "40px 0 40px 0",
+          }}
+        >
+          <img style={{ width: "80%" }} src="./banner2.PNG" />
         </div>
         <div>
-          <h3>Explore Our Self-Care Essentials</h3>
-          <div style={{ display: "flex" }}>
+          <h1
+            style={{
+              fontSize: "33px",
+              fontWeight: "600",
+              fontFamily: "PlayfairDisplayBold,serif",
+              textAlign: "center",
+              marginTop: "50px",
+              marginBottom: "20px",
+            }}
+          >
+            Explore Our Self-Care Essentials
+          </h1>
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              padding: "0 50px 0 50px",
+              marginBottom: "50px",
+            }}
+          >
             {comfort.map((dat) => (
               <div style={{ textAlign: "center" }} key={dat.id}>
                 <img src={dat.image} />
@@ -326,29 +388,98 @@ export default function Home() {
         </div>
 
         <div>
-          <h3>Trending Flowers & Gifts</h3>
-          <div style={{ display: "flex", width: "100%" }}>
-            {trending.map((dat) => (
-              <div style={{ textAlign: "center" }} key={dat.id}>
-                <img
-                  style={{ textAlign: "center", width: "40%" }}
-                  src={dat.image}
-                />
-                <p>{dat.title}</p>
-                <p style={{ color: "green" }}>{dat.price}</p>
-              </div>
-            ))}
+          <h1
+            style={{
+              fontSize: "23px",
+              fontWeight: "600",
+              fontFamily: "PlayfairDisplayBold,serif",
+              textAlign: "center",
+              marginTop: "90px",
+              marginBottom: "20px",
+            }}
+          >
+            Trending Flowers & Gifts
+          </h1>
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              padding: "0 10px 0 50px",
+
+              justifyContent: "center",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                width: "82%",
+
+                marginBottom: "20px",
+                justifyContent: "center",
+              }}
+            >
+              {trending.map((dat) => (
+                <div style={{ textAlign: "center" }} key={dat.id}>
+                  <img
+                    style={{ textAlign: "center", width: "90%" }}
+                    src={dat.image}
+                  />
+                  <p style={{ fontSize: "13px", textAlign: "left" }}>
+                    {dat.title}
+                  </p>
+                  <p
+                    style={{
+                      color: "green",
+                      fontSize: "13px",
+                      textAlign: "left",
+                    }}
+                  >
+                    {dat.price}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-        <div>
-          <img src="./banner3.PNG" />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            margin: "0 0 40px 0",
+          }}
+        >
+          <img style={{ width: "94%" }} src="./banner3.PNG" />
         </div>
-        <div>
-          <h3>
-            <img src="https://images.contentstack.io/v3/assets/bltdd99f24e8a94d536/blt4661dd99d6401481/60184a440f1c0c1aa6f87986/instagram-icon.svg?quality=75&auto=webp&optimize={medium}" />
-            Share Your #MadeMeSmile Flowers Moment
-          </h3>
-          <div style={{ display: "flex" }}>
+
+        <h1
+          style={{
+            display: "flex",
+            fontSize: "23px",
+            fontWeight: "600",
+            fontFamily: "PlayfairDisplayBold,serif",
+            textAlign: "center",
+            marginTop: "50px",
+            justifyContent: "center",
+            gap: "7px",
+          }}
+        >
+          <img src="https://images.contentstack.io/v3/assets/bltdd99f24e8a94d536/blt4661dd99d6401481/60184a440f1c0c1aa6f87986/instagram-icon.svg?quality=75&auto=webp&optimize={medium}" />
+          Share Your #MadeMeSmile Flowers Moment
+        </h1>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "10px",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              width: "94%",
+              justifyContent: "center",
+            }}
+          >
             {flowerMoment.map((dat) => (
               <div style={{ textAlign: "center" }} key={dat.id}>
                 <img src={dat.image} />
@@ -356,36 +487,109 @@ export default function Home() {
             ))}
           </div>
         </div>
+
         <div>
-          <h3>Some of the Great Things Our Customers Say About Us</h3>
-          <div style={{ display: "flex", width: "100%" }}>
+          <h1
+            style={{
+              display: "flex",
+              fontSize: "28px",
+              fontWeight: "600",
+              fontFamily: "PlayfairDisplayBold,serif",
+              textAlign: "center",
+              marginTop: "50px",
+              justifyContent: "center",
+              gap: "7px",
+            }}
+          >
+            Some of the Great Things Our Customers Say About Us
+          </h1>
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              marginBottom: "40px",
+              marginTop: "30px",
+              justifyContent: "center",
+            }}
+          >
             {aboutUs.map((dat) => (
-              <div style={{ textAlign: "center" }} key={dat.id}>
-                <img style={{ textAlign: "center" }} src={dat.image} />
-                <ReactStars count={5} size={24} color2={"violet"} />
-                <p>{dat.title}</p>
-                <p>{dat.description}</p>
-                <p>{dat.author}</p>
+              <div
+                style={{ padding: "0 20px 0 20px", width: "25%" }}
+                key={dat.id}
+              >
+                <img
+                  style={{
+                    display: "flex",
+                    margin: "auto",
+                    marginBottom: "20px",
+                  }}
+                  src={dat.image}
+                />
+                <Center>
+                  <ReactStars count={5} size={24} />
+                </Center>
+                <p
+                  style={{
+                    textAlign: "center",
+                    marginBottom: "20px",
+                    marginTop: "20px",
+                    fontSize: "18px",
+                    fontWeight: "600",
+                  }}
+                >
+                  {dat.title}
+                </p>
+                <p
+                  style={{
+                    textAlign: "center",
+                    marginBottom: "20px",
+                    fontWeight: "400",
+                  }}
+                >
+                  "{dat.description}"
+                </p>
+                <p
+                  style={{
+                    textAlign: "center",
+                    fontSize: "18px",
+                    fontWeight: "600",
+                  }}
+                >
+                  {dat.author}
+                </p>
               </div>
             ))}
           </div>
         </div>
-        <div>
-          Powered by
-          <img src="https://images.contentstack.io/v3/assets/bltdd99f24e8a94d536/bltcf637a6e16efdb8e/5ea9acbed4b10d15d3e8cfb3/yotpo-logo.png?quality=70&auto=webp&optimize={medium}" />
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <span style={{ color: "blue", display: "flex", marginRight: "4px" }}>
+            Powered by{" "}
+          </span>
+          <img
+            style={{ width: "2%" }}
+            src="https://images.contentstack.io/v3/assets/bltdd99f24e8a94d536/bltcf637a6e16efdb8e/5ea9acbed4b10d15d3e8cfb3/yotpo-logo.png?quality=70&auto=webp&optimize={medium}"
+          />
         </div>
-        <div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            margin: "30px 0 40px 0",
+          }}
+        >
           <img src="./banner4.PNG" />
         </div>
-
-        <Heading
-          as="h3"
-          size="md"
-          style={{ cursor: "pointer" }}
-          onClick={onToggle}
-        >
-          More About Our Flower Delivery +
-        </Heading>
+        <Center>
+          <Heading
+            as="h3"
+            size="md"
+            style={{ cursor: "pointer" }}
+            onClick={onToggle}
+          >
+            More About Our Flower Delivery{" "}
+            <span style={{ width: "5%" }}>-</span>
+          </Heading>
+        </Center>
         <Collapse in={!isOpen} animateOpacity>
           <Box
             p="40px"
@@ -395,11 +599,11 @@ export default function Home() {
             rounded="md"
             shadow="md"
           >
-            <Heading as="h4" size="md">
+            <Heading as="h4" size="14px" bg="#E8EAEC" p="10px">
               Send Flowers Online with Flower Delivery by 1-800-Flowers.com, the
               World's Favorite Florist!
             </Heading>
-            <p>
+            <p style={{ padding: "10px", fontSize: "14px" }}>
               There's no better place to order flowers online than
               1-800-Flowers.com. Whether you're looking to buy flowers and gifts
               like roses, orchids, gift baskets, bonsai trees, flowering plants
@@ -408,10 +612,10 @@ export default function Home() {
               Dazzle and delight your loved ones wherever they may be with truly
               original flowers and gifts from 1-800-Flowers.com.
             </p>
-            <Heading as="h4" size="md">
+            <Heading as="h4" size="14px" bg="#E8EAEC" p="10px">
               Quick Flower Delivery and Great Customer Service
             </Heading>
-            <p>
+            <p style={{ padding: "10px", fontSize: "14px" }}>
               Same-day flower delivery is available every day, for all seasons:
               spring, winter, summer and fall. To send flowers for same-day
               delivery, all you have to do is place your order by the following
@@ -427,14 +631,14 @@ export default function Home() {
               gift recommendations, to anniversary floral arrangements she is
               sure to love.
             </p>
-            <p>
+            <p style={{ padding: "10px", fontSize: "14px" }}>
               For sympathy gifts and funeral flowers, our team of experienced
               Sympathy Advisors are ready to assist you at 1-866-538-2259.
             </p>
-            <Heading as="h4" size="md">
+            <Heading as="h4" size="14px" bg="#E8EAEC" p="10px">
               Order the Best Flowers Online for All Occasions and Holidays
             </Heading>
-            <p>
+            <p style={{ padding: "10px", fontSize: "14px" }}>
               We're the best choice when shopping online for gifts and flowers
               just because, or for special occasions like Mother's Day or
               Valentine's Day. Choose the perfect gift from the best selection
@@ -444,15 +648,15 @@ export default function Home() {
               everyone. With same-day gift delivery, we're also your source for
               last-minute gifts, too!
             </p>
-            <p>
+            <p style={{ padding: "10px", fontSize: "14px" }}>
               Deliver smiles all year long with Free Shipping/No Service Charge
               on all your flowers & gifts when you join the Celebrations
               Passport® program.
             </p>
-            <Heading as="h4" size="md">
+            <Heading as="h4" size="14px" bg="#E8EAEC" p="10px">
               Send Flowers Internationally
             </Heading>
-            <p>
+            <p style={{ padding: "10px", fontSize: "14px" }}>
               We deliver flowers across the United States and around the world.
               If you want to send flowers internationally, trust us to deliver
               your most heartfelt messages. Because of our partnerships with
@@ -461,10 +665,10 @@ export default function Home() {
               flower arrangements are artfully created and delivered perfectly
               arranged by professional florists.
             </p>
-            <Heading as="h4" size="md">
+            <Heading as="h4" size="14px" bg="#E8EAEC" p="10px">
               Fresh Flowers Guaranteed by Trusted Florists
             </Heading>
-            <p>
+            <p style={{ padding: "10px", fontSize: "14px" }}>
               In 1976, Jim McCann, founder of 1-800-Flowers.com, opened his
               first retail florist shop and forever changed the way people buy
               flowers for birthdays, anniversaries, and other special occasions.
@@ -481,10 +685,13 @@ export default function Home() {
               for every gifting need, whether you're looking for flower delivery
               across town or across the country.
             </p>
-            <Heading as="h4" size="md">
+            <Heading as="h4" size="14px" bg="#E8EAEC" p="10px">
               Trending Flowers News & Articles from Our Flower Blog, Petal Talk:
             </Heading>
-            <ul>
+
+            <ul
+              style={{ padding: "10px", fontSize: "14px", marginLeft: "20px" }}
+            >
               <li>Flower Color Meanings</li>
               <li>Best Plant Care Tips from Our Plant Corner</li>
               <li>Different Types of Flowers with Pictures</li>
@@ -496,7 +703,7 @@ export default function Home() {
             </ul>
           </Box>
         </Collapse>
-        <div style={{ float: "right", marginLeft: "1400px" }}>
+        <div style={{ float: "right", marginLeft: "1400px",border:"1px solid black" }}>
           <button
             style={{
               padding: "10px 10px 10px 10px",
@@ -509,7 +716,8 @@ export default function Home() {
             <p>Move Top</p>
           </button>
         </div>
-      </main>
+      </div>
+      <Footer/>
     </>
   );
 }
