@@ -12,7 +12,7 @@ const Pages=({data})=>{
     }
     const handleRemove=async(id)=>{
         await axios
-        .delete(`http://localhost:8080/addtocart/${id}`)
+        .delete(`https://fine-erin-turkey-hose.cyclic.app/addtocart/${id}`)
         .then((res)=>{
             alert("Delete");
             refresh();
@@ -30,6 +30,7 @@ const Pages=({data})=>{
                     <div key={el.id}>
                         <img src={el.img} alt="img"></img>
                         <h1>{el.name}</h1>
+                        <h1>{el.price}</h1>
                         <p>{el.category}</p>
                         <button onClick={()=>handleRemove(el.id)}>Remove</button>
                     </div>
@@ -41,7 +42,7 @@ const Pages=({data})=>{
 }
 
 export async function getServerSideProps(context){
-    const r=await fetch(`http://localhost:8080/addtocart`);
+    const r=await fetch(`https://fine-erin-turkey-hose.cyclic.app/addtocart`);
     const d=await r.json()
 
     return{

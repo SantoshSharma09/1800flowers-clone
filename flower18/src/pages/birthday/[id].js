@@ -5,7 +5,7 @@ import React from "react";
 const SinglePage = ({ data }) => {
   const router = useRouter();
   const handleAdd = async () => {
-    await axios.post(` http://localhost:8080/addtocart/`,data)
+    await axios.post(` https://fine-erin-turkey-hose.cyclic.app/addtocart/`,data)
     .then((res)=>alert("Successfully added to cart"),router.push("/addtocart"))
     .catch((er)=>alert(er))
   };
@@ -17,11 +17,19 @@ const SinglePage = ({ data }) => {
     </div>
   )
 };
+export async function getStaticPaths(){
+  let r=await fetch(`https://fine-erin-turkey-hose.cyclic.app/Birthday`)
+  let d=await r.json()
 
-export async function getServerSideProps(context) {
+  return{
+    paths:d.map((el)=>({params: {id:String(el.id)}})),
+    fallback: false,
+  }
+}
+export async function getStaticProps(context) {
   console.log(context);
   const { id } = context.params;
-  const r = await fetch(`http://localhost:8080/Birthday/${id}`);
+  const r = await fetch(`https://fine-erin-turkey-hose.cyclic.app/Birthday/${id}`);
   const d = await r.json();
   return {
     props: {
