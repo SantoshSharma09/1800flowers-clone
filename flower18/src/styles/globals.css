@@ -117,6 +117,7 @@ a {
 .navbar1 {
   /* border: 1px solid red; */
   background-color: #65388b;
+  background: #65388b;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -183,8 +184,8 @@ a {
   transition: 0.3s;
 }
 .inputbtn > input:focus {
-  border-color: dodgerBlue;
-  box-shadow: 0 0 8px 0 dodgerBlue;
+  border-color: #65388b;
+  box-shadow: 0 0 8px 0 #65388b;
 }
 
 .inputbtn > button {
