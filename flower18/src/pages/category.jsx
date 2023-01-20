@@ -124,6 +124,7 @@ const category = () => {
             </Box>
 
             <Button mt={"20px"} ml={"0%"} w={"100%"} height={"50px"} color={"white"} bgColor={"#61c278"}>Add to Cart <BiNotepad /></Button>
+          
           </Box>
 
           <Box onClick={onOpen} borderRadius={"10px"} padding={4} shadow={"lg"} >DESIGNED AND DELIVERD BY LOCAL SHOP --LEARN MORE</Box>

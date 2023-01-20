@@ -38,7 +38,7 @@ const Allvalentine= ({ data }) => {
         height={"600px"}
         position={"fixed"}
       >
-        <Text ml={"20%"} mt={"20%"} color={"#9062BC"} fontSize={"2xl"}>
+        <Text ml={"20%"} mt={"10%"} color={"#9062BC"} fontSize={"2xl"}>
           Sort by Price
         </Text>
         <Stack
@@ -145,10 +145,10 @@ const Allvalentine= ({ data }) => {
                     src="https://images.contentstack.io/v3/assets/bltdd99f24e8a94d536/blt8d4549d3cac15860/61e09d4f2e109d6c649d4aa4/PP_EligibleIcon.svg"
                   />
                   <Stack mt="6" spacing="3">
-                    <Heading size="md">{el.mbp318}</Heading>
-                    <Flex gap={10}>
+                    <Heading size="md">{el.name}</Heading>
+                    <Flex gap={"150px"}>
                       <Text color="#734F96" fontSize="2xl">
-                        {el.price}
+                        ${el.price}
                       </Text>
                       <Button colorScheme="purple">Add to cart</Button>
                     </Flex>

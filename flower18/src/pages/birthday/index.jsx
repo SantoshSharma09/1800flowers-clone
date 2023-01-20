@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useEffect } from "react";
+
 // import styled from "styled-components";
 // const Pages = ({ data }) => {
 //   console.log(data, "mydata");
@@ -133,37 +134,42 @@ const Birthday = ({ birthData }) => {
 
   return (
     <>
-    <Input
+    {/* <Input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="search"
           style={{border:"1px solid red"}}
         />
-        <Button onClick={handleSearch}>SEARCH</Button>
+        <Button onClick={handleSearch}>SEARCH</Button> */}
     <Box border={"0px solid black"} height={"700px"} display={"flex"}>
-      <Box width={"18%"} mt={"0%"} height={"600px"} position={"fixed"}>
+      {/* <Box width={"18%"} mt={"0%"} height={"600px"} position={"fixed"}>
         <Text ml={"20%"} mt={"20%"} color={"#9062bc"} fontSize={"2xl"}>
           Search By Name
         </Text>
         
-      </Box>
+      </Box> */}
       <Box
         border={"0px solid red"}
         width={"18%"}
         mt={"0%"}
         height={"600px"}
         position={"fixed"}
-        marginTop={"70px"}
+        marginTop={"2px"}
       >
         <Text ml={"20%"} mt={"20%"} color={"#9062bc"} fontSize={"2xl"}>
           Sort by Price
         </Text>
         <Stack
+        rounded={"lg"}
+        // bg={useColorModeValue("white", "gray.700")}
+        // boxShadow={"lg"}
+        bgImage={"/wave.jpg"}
+        p={6}
           borderRadius={"10px"}
           ml={"20%"}
           h={"100px"}
-          backgroundColor={"#9062bc"}
+          // backgroundColor={"#9062bc"}
           color={"white "}
           mt={"3%"}
           direction="column"
@@ -173,7 +179,7 @@ const Birthday = ({ birthData }) => {
             size="lg"
             name="1"
             colorScheme="white"
-            color={"white "}
+            color={"black "}
             defaultChecked
           >
             Low to High
