@@ -1,3 +1,4 @@
+import { async } from "@firebase/util";
 import axios from "axios";
 import { useRouter } from "next/router";
 import React from "react";
@@ -9,6 +10,8 @@ const Pages = ({ data }) => {
   const refresh = () => {
     router.replace(router.asPath);
   };
+
+  
   const handleRemove = async (id) => {
     await axios
       .delete(`https://fine-erin-turkey-hose.cyclic.app/occasioncart/${id}`)

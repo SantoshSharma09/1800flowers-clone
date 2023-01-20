@@ -38,6 +38,22 @@ const Occasion = ({ occasion }) => {
     );
   }
 
+  const htol = async () => {
+    console.log("fiine")
+    let res = await fetch(
+      `https://fine-erin-turkey-hose.cyclic.app/occasion?_sort=price&_order=asc?_limit=6&&_start=7`
+    );
+    let data = await res.json();
+    setData(data);
+  };
+  const ltoh= async () => {
+    console.log("fiine")
+    let res = await fetch(
+      `https://fine-erin-turkey-hose.cyclic.app/occasion?_sort=price&_order=asc?_limit=6&&_start=7`
+    );
+    let data = await res.json();
+    setData(data);
+  };
   useEffect(() => {
     FetchProduct("")
       .then((res) => {
@@ -48,15 +64,7 @@ const Occasion = ({ occasion }) => {
       });
   }, []);
 
-  const handleSearch = () => {
-    FetchProduct(query)
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((err) => {
-        console.log("err:", err);
-      });
-  };
+  
 
   const loadmore = async () => {
     const res = await fetch(
@@ -66,23 +74,16 @@ const Occasion = ({ occasion }) => {
     setPage((val) => [...val, ...posts]);
   };
 
-  console.log(page);
+  console.log(data);
 
   return (
     <>
-      <Input
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="search"
-        style={{ border: "1px solid red" }}
-      />
-      <Button onClick={handleSearch}>SEARCH</Button>
+      
       <Box border={"0px solid black"} height={"700px"} display={"flex"}>
         <Box width={"18%"} mt={"0%"} height={"600px"} position={"fixed"}>
-          <Text ml={"20%"} mt={"20%"} color={"#9062bc"} fontSize={"2xl"}>
+          {/* <Text ml={"20%"} mt={"20%"} color={"#9062bc"} fontSize={"2xl"}>
             Search By Name
-          </Text>
+          </Text> */}
         </Box>
         <Box
           border={"0px solid red"}
@@ -92,7 +93,9 @@ const Occasion = ({ occasion }) => {
           position={"fixed"}
           marginTop={"70px"}
         >
-          <Text ml={"20%"} mt={"20%"} color={"#9062bc"} fontSize={"2xl"}>
+          <Input ml={"20%"} mt={"10%"} border={"1px solid #9062bc"} width={"150px"} placeholder="Enter"/>
+          <Button bgColor={"#9062bc"} color="white">Search</Button>
+          <Text ml={"20%"} mt={"10%"} color={"#9062bc"} fontSize={"2xl"}>
             Sort by Price
           </Text>
           <Stack
@@ -111,11 +114,18 @@ const Occasion = ({ occasion }) => {
               colorScheme="white"
               color={"white "}
               defaultChecked
+              onClick={()=>ltoh()}
             >
               Low to High
             </Radio>
 
-            <Radio size="lg" name="1" colorScheme="white" defaultChecked>
+            <Radio
+              size="lg"
+              name="1"
+              colorScheme="white"
+              defaultChecked
+              onClick={()=>htol(data)}
+            >
               High to Low
             </Radio>
           </Stack>
@@ -220,6 +230,7 @@ const Occasion = ({ occasion }) => {
               </GridItem>
             ))}
           </Grid>
+
           <Button onClick={loadmore} ml={"40%"} colorScheme="purple">
             Load More
           </Button>
