@@ -19,6 +19,7 @@ import {
 import Image from "next/image";
 import { useState } from "react";
 import { auth, provider } from "./firebase/firebase-config";
+// import { Link } from "next/link";
 
 export default function Login() {
   //---------------Signup------------------//
@@ -60,7 +61,7 @@ export default function Login() {
       justify={"center"}
       bg={useColorModeValue("gray.50", "gray.800")}
     >
-      <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
+      <Stack spacing={8} mx={"auto"} w={500} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
           <Image src={"/logo.png"} alt="Logo" width={150} height={150} />
           <Heading fontSize={"4xl"} textAlign={"center"}>
@@ -71,7 +72,8 @@ export default function Login() {
           rounded={"lg"}
           bg={useColorModeValue("white", "gray.700")}
           boxShadow={"lg"}
-          p={8}
+          bgImage={"/wave.jpg"}
+          p={6}
         >
           <Stack spacing={4}>
             <Box>
