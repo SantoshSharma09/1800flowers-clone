@@ -110,7 +110,7 @@ export default function Navbar() {
       </div>
       <div className="navbar3">
         <div className="img">
-          <Image src={"/me.png"} alt="Logo" width={80} height={80} />
+          <Image src={"/me.png"} alt="Logo" width={60} height={60} />
         </div>
         <div className="inputbtn">
           <input type="text" placeholder="Enter Keyword or Product Number" />
