@@ -334,4 +334,11 @@ nav .wrapper {
 .row .mega-links li a:hover {
   color: white;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 576px) {
+ .navbar{
+  width:100%
+ }
+}
+
 /* ---------- */
