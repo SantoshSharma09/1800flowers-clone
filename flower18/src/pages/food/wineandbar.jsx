@@ -23,8 +23,7 @@ const Wineandbar= ({ data }) => {
   const [page, setPage] = useState(data);
   const loadmore = async () => {
     const res = await fetch(
-      `https://mock-server-f2z5.onrender.com/wineandbar
-    ?_limit=6&&_start=6`
+      `https://mock-server-f2z5.onrender.com/wineandbar?_limit=6&&_start=6`
     );
     const posts = await res.json();
     setPage((val) => [...val, ...posts]);
