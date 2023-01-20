@@ -1,0 +1,38 @@
+.admincontainer{
+    height: 600px;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+        rgba(185, 179, 179, 0.5),
+        rgba(231, 226, 226, 0.5)
+      ),
+      url("https://img.freepik.com/premium-vector/dashboard-ui-admin-panel-design-template-with-infographic-elements_9209-2835.jpg?w=1380")
+      center;
+  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .wrapper{
+    width: 40%;
+    padding: 20px;
+    background-color: rgb(243, 240, 214);
+    opacity: 70%;
+  }
+  .Title{
+    font-size: 24px;
+    font-weight: 300;
+  }
+  .Form{
+    display: flex;
+    flex-direction: column;
+  }
+  .inp-box{
+    padding: 7px;
+  }
+  .sub-btn{
+    width: 30%;
+    background-color: rgb(20, 117, 173);
+    border: none;
+    border-radius: 20px;
+  }
