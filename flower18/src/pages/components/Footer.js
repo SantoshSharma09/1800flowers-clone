@@ -3,14 +3,22 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <footer style={{backgroundColor:"#63588B"}} className="text-center text-lg-start bg-white text-muted">
-        <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <footer
+        style={{
+          backgroundColor: "#65388B",
+          marginTop: "0px",
+          color:"white",
+          paddingTop:"20px"
+        }}
+        className="text-center text-lg-start "
+      >
+        {/* <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
           <div className="me-5 d-none d-lg-block">
             <span>Get connected with us on social networks:</span>
           </div>
 
           <div>
-            <a href="" className="me-4 link-secondary">
+            <a href="" className="me-4 link-primary">
               <i className="fab fa-facebook-f"></i>
             </a>
             <a href="" className="me-4 link-secondary">
@@ -29,7 +37,7 @@ const Footer = () => {
               <i className="fab fa-github"></i>
             </a>
           </div>
-        </section>
+        </section> */}
 
         <section className="">
           <div className="container text-center text-md-start mt-5">
@@ -117,7 +125,8 @@ const Footer = () => {
         </section>
 
         <div className="text-center p-4">
-        © 2023 1-800-Flowers.com, Inc., Jericho, NY Family of BrandsTerms of Use-Privacy Notice-Accessibility Statement
+          © 2023 1-800-Flowers.com, Inc., Jericho, NY Family of BrandsTerms of
+          Use-Privacy Notice-Accessibility Statement
           {/* <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
             MDBootstrap.com
           </a> */}

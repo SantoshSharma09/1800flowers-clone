@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <div className="navbar">
-      <div className="navbar1">
+      <div style={{ width: "100%" }} className="navbar1">
         <a>Corporate Gifts</a>
         <a>
           Store Locator
@@ -118,7 +118,7 @@ export default function Navbar() {
         </div>
         <div className="logoname">
           <div className="child">
-            <Link  href={"/login"}>
+            <Link href={"/login"}>
               <BiLogOut className="nth" />
             </Link>
             <Link href={"/login"}>Login/Logout</Link>
@@ -127,7 +127,9 @@ export default function Navbar() {
             <Link href="/signup">
               <CgProfile className="nth" />
             </Link>
-            <Link href="/signup">{currentUser ? currentUser?.displayName : "Profile/Signup"}</Link>
+            <Link href="/signup">
+              {currentUser ? currentUser?.displayName : "Profile/Signup"}
+            </Link>
           </div>
           <div className="child">
             <div>

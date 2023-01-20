@@ -275,7 +275,10 @@ export default function Home() {
       <Navbar />
       <div style={{ marginTop: "280px" }}>
         <div style={{ width: "100%" }}>
-          <img src="https://images.contentstack.io/v3/assets/bltdd99f24e8a94d536/blt0e98fd147de5199a/631a53cd10c00a57bb0cd53d/birthday-flowers-hero-fy23-fall.jpg?quality=75&auto=webp&optimize={medium}" />
+          <img
+            style={{ width: "100%" }}
+            src="https://images.contentstack.io/v3/assets/bltdd99f24e8a94d536/blt0e98fd147de5199a/631a53cd10c00a57bb0cd53d/birthday-flowers-hero-fy23-fall.jpg?quality=75&auto=webp&optimize={medium}"
+          />
         </div>
         <div>
           <h1
@@ -291,10 +294,14 @@ export default function Home() {
             Send Flowers & Exclusive Gift
           </h1>
           <div
-            style={{ display: "flex", width: "100%", padding: "0 50px 0 50px" }}
+            style={{
+              display: "flex",
+              width: "100%",
+              padding: "0 50px 0 50px",
+            }}
           >
             {data.map((dat) => (
-              <div style={{ textAlign: "center" }} key={dat.id}>
+              <div style={{ textAlign: "center", width: "100%" }} key={dat.id}>
                 <img style={{ width: "100%" }} src={dat.image} />
                 <p>{dat.title}</p>
               </div>
@@ -333,19 +340,31 @@ export default function Home() {
             }}
           >
             {offer.map((dat) => (
-              <div style={{ textAlign: "center" }} key={dat.id}>
+              <div style={{ textAlign: "center", width: "100%" }} key={dat.id}>
                 <img src={dat.image} />
                 <p>{dat.title}</p>
               </div>
             ))}
           </div>
         </div>
-        <div style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "30px",
+          }}
+        >
           <div style={{ width: "38%" }}>
-            <img src="https://images.contentstack.io/v3/assets/bltdd99f24e8a94d536/blt4e2cd58eaa3200f8/63afaf864efa494a5213dfdd/orchid-flowers-foty-tier-fy23.jpg?quality=60&auto=webp&optimize={medium}" />
+            <img
+              style={{ width: "100%" }}
+              src="https://images.contentstack.io/v3/assets/bltdd99f24e8a94d536/blt4e2cd58eaa3200f8/63afaf864efa494a5213dfdd/orchid-flowers-foty-tier-fy23.jpg?quality=60&auto=webp&optimize={medium}"
+            />
           </div>
           <div style={{ width: "38%" }}>
-            <img src="https://images.contentstack.io/v3/assets/bltdd99f24e8a94d536/blt68280c5448a46856/63afafc33d631e106c3e825a/calathea-rattlesnake-poty-tier-fy23.jpg?quality=60&auto=webp&optimize={medium}" />
+            <img
+              style={{ width: "100%" }}
+              src="https://images.contentstack.io/v3/assets/bltdd99f24e8a94d536/blt68280c5448a46856/63afafc33d631e106c3e825a/calathea-rattlesnake-poty-tier-fy23.jpg?quality=60&auto=webp&optimize={medium}"
+            />
           </div>
         </div>
         <div
@@ -379,7 +398,7 @@ export default function Home() {
             }}
           >
             {comfort.map((dat) => (
-              <div style={{ textAlign: "center" }} key={dat.id}>
+              <div style={{ textAlign: "center", width: "100%" }} key={dat.id}>
                 <img src={dat.image} />
                 <p>{dat.title}</p>
               </div>
@@ -692,18 +711,50 @@ export default function Home() {
             <ul
               style={{ padding: "10px", fontSize: "14px", marginLeft: "20px" }}
             >
-              <li>Flower Color Meanings</li>
-              <li>Best Plant Care Tips from Our Plant Corner</li>
-              <li>Different Types of Flowers with Pictures</li>
-              <li>Thoughtful Sympathy Card Message Ideas</li>
-              <li>Zodiac Flowers by Your Sign</li>
               <li>
-                How to Preserve Flowers in WaxHow to Preserve Flowers in Wax
+                <span style={{ color: "blue", textDecoration: "underline" }}>
+                  Flower Color Meanings
+                </span>
+              </li>
+              <li>
+                <span style={{ color: "blue", textDecoration: "underline" }}>
+                  Best Plant Care Tips from Our Plant Corner
+                </span>
+              </li>
+              <li>
+                <span style={{ color: "blue", textDecoration: "underline" }}>
+                  Different Types of Flowers with Pictures
+                </span>
+              </li>
+              <li>
+                <span style={{ color: "blue", textDecoration: "underline" }}>
+                  Thoughtful Sympathy Card Message Ideas
+                </span>
+              </li>
+              <li>
+                <span style={{ color: "blue", textDecoration: "underline" }}>
+                  Zodiac Flowers by Your Sign
+                </span>
+              </li>
+              <li>
+                <span style={{ color: "blue", textDecoration: "underline" }}>
+                  {" "}
+                  How to Preserve Flowers in WaxHow to Preserve Flowers in Wax
+                </span>
               </li>
             </ul>
           </Box>
         </Collapse>
-        <div style={{ float: "right", marginLeft: "1400px",border:"1px solid black" }}>
+        <div
+          style={{
+            float: "right",
+            // marginLeft: "1300px",
+            border: "1px solid black",
+            marginRight: "20px",
+            backgroundColor: "white",
+            borderRadius: "square",
+          }}
+        >
           <button
             style={{
               padding: "10px 10px 10px 10px",
@@ -712,12 +763,16 @@ export default function Home() {
             }}
             onClick={() => scrollToTop()}
           >
-            <AiOutlineArrowUp />
-            <p>Move Top</p>
+            <Center>
+              <AiOutlineArrowUp />
+            </Center>
+            {/* <p>Move Top</p> */}
           </button>
         </div>
+        <br />
+        <br />
+        <br />
       </div>
-      <Footer/>
     </>
   );
 }
