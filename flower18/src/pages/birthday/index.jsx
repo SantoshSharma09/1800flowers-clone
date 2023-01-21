@@ -1,63 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useEffect } from "react";
-// import styled from "styled-components";
-// const Pages = ({ data }) => {
-//   console.log(data, "mydata");
-//   const ProductWrapper = styled.div`
-//     display: grid;
-//     grid-template-columns: repeat(3, 1fr);
-//     gap: "20px";
-//     height: auto;
-//     width: 80%;
-//   `;
-//   const Button=styled.button`
-//     padding: 10px;
-//     margin-left: 40%;
-//     border: 1px solid red;
-//   `
-//   const [page, setPage] = useState(data);
 
-//   const loadmore = async () => {
-//     const res = await fetch(
-//       `https://fine-erin-turkey-hose.cyclic.app/Birthday?_limit=6&&_start=6`
-//     );
-//     const posts = await res.json();
-//     setPage((val) => [...val, ...posts]);
-//   };
-//    console.log(page)
-//   return (
-//     <div>
-//       <ProductWrapper>
-//         {page.map((el) => {
-//           return (
-//             <div key={el.id}>
-//               <Link href={`birthday/${el.id}`}>
-//                 <img src={el.img} alt={el.id}></img>
-//                 <h1>{el.name}</h1>
-//                 <p>{el.price}</p>
-//               </Link>
-//             </div>
-//           );
-//         })}
-//       </ProductWrapper>
-//       <Button onClick={loadmore}>Load More</Button>
-//     </div>
-//   );
-// };
-
-// export default Pages;
-
-// export const getStaticProps = async () => {
-
-//   const r = await fetch(` https://fine-erin-turkey-hose.cyclic.app/Birthday?_limit=6`);
-//   const d = await r.json();
-//   return {
-//     props: {
-//       data: d,
-//     },
-//   };
-// };
 import axios from "axios";
 import {
   Box,
@@ -67,21 +11,15 @@ import {
   Card,
   CardBody,
   Text,
-  Divider,
   Button,
-  ButtonGroup,
-  CardFooter,
   Image,
   Heading,
   Grid,
   GridItem,
   Input,
 } from "@chakra-ui/react";
-// import {BsCircle} from "react-icons/bs"
 
 const Birthday = ({ birthData }) => {
-  // console.log(proj)
-
   const [page, setPage] = useState(birthData);
   const [query, setQuery] = useState("");
   const [data, setData] = useState([]);
@@ -122,6 +60,7 @@ const Birthday = ({ birthData }) => {
     setPage((val) => [...val, ...posts]);
   };
 
+
   const htol = async () => {
     let res = await fetch(
       `https://fine-erin-turkey-hose.cyclic.app/plants?_sort=price&_order=asc`
@@ -136,18 +75,21 @@ const Birthday = ({ birthData }) => {
     let data = await res.json();
     setPage(data);
   };
+
   console.log(page);
 
   return (
     <>
-    <Input
+      <Box mt={"15%"} mb={"50%"}>
+        <Input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="search"
-          style={{border:"1px solid red"}}
+          style={{ border: "1px solid red" }}
         />
         <Button onClick={handleSearch}>SEARCH</Button>
+
     <Box border={"0px solid black"} height={"700px"} display={"flex"}>
       <Box width={"18%"} mt={"0%"} height={"600px"} position={"fixed"}>
         <Text ml={"20%"} mt={"20%"} color={"#9062bc"} fontSize={"2xl"}>
@@ -295,8 +237,8 @@ const Birthday = ({ birthData }) => {
         <Button onClick={loadmore} ml={"40%"} colorScheme="purple">
           Load More
         </Button>
+
       </Box>
-    </Box>
     </>
   );
 };
