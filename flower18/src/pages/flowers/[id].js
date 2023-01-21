@@ -79,13 +79,13 @@ const category = ({data}) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
      const router = useRouter();
     const handleAdd = async () => {
-      await axios.post(` https://fine-erin-turkey-hose.cyclic.app/addtocart/`,data)
+      await axios.post(` https://mock-server-f2z5.onrender.com/dogs/addtocart/`,data)
       .then((res)=>alert("Successfully added to cart"),router.push("/addtocart"))
       .catch((er)=>alert(er))
     };
 
   return (
-    <Container  maxW={'7xl'} mt={"-70px"}>
+    <Container maxW={'7xl'} mt={"-70px"}>
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
         spacing={{ base: 8, md: 10 }}
@@ -209,7 +209,7 @@ const category = ({data}) => {
 export default category
 
  export async function getStaticPaths(){
-    let r=await fetch(`https://fine-erin-turkey-hose.cyclic.app/Birthday`)
+    let r=await fetch(`https://mock-server-f2z5.onrender.com/dogs`)
     let d=await r.json()
   
     return{
@@ -221,7 +221,7 @@ export default category
 export async function getStaticProps(context) {
     console.log(context);
     const { id } = context.params;
-    const r = await fetch(`https://fine-erin-turkey-hose.cyclic.app/Birthday/${id}`);
+    const r = await fetch(`https://mock-server-f2z5.onrender.com/dogs/${id}`);
     const d = await r.json();
     return {
       props: {

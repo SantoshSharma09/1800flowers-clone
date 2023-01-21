@@ -123,13 +123,13 @@ const Birthday = ({ birthData }) => {
     setPage((val) => [...val, ...posts]);
   };
 
-  // const HtoL=async()=>{
-  //   const res=await fetch(`
-  //   https://fine-erin-turkey-hose.cyclic.app/Birthday?_sort=price&_order=asc&&_limit=6&&_start=6
-  //   `);
-  //   const posts=await res.json();
-  //   setPage((val)=>[...val,...posts])
-  // }
+  const HtoL=async()=>{
+    const res=await fetch(`
+    https://fine-erin-turkey-hose.cyclic.app/Birthday?_sort=price&_order=asc&&_limit=6&&_start=6
+    `);
+    const posts=await res.json();
+    setPage((val)=>[...val,...posts])
+  }
   console.log(page);
 
   return (
@@ -142,7 +142,7 @@ const Birthday = ({ birthData }) => {
           style={{border:"1px solid red"}}
         />
         <Button onClick={handleSearch}>SEARCH</Button> */}
-    <Box border={"0px solid black"} height={"700px"} display={"flex"}>
+    <Box border={"0px solid black"} height={"700px"} display={"flex"} marginTop={"15%"} marginBottom={"35%"}>
       {/* <Box width={"18%"} mt={"0%"} height={"600px"} position={"fixed"}>
         <Text ml={"20%"} mt={"20%"} color={"#9062bc"} fontSize={"2xl"}>
           Search By Name
@@ -151,26 +151,25 @@ const Birthday = ({ birthData }) => {
       </Box> */}
       <Box
         border={"0px solid red"}
-        width={"18%"}
-        mt={"0%"}
+        width={"20%"}
+        // mt={"-300px"}
         height={"600px"}
         position={"fixed"}
         marginTop={"2px"}
+        bgImage={"/wave.jpg"}
+        p={6}
       >
         <Text ml={"20%"} mt={"20%"} color={"#9062bc"} fontSize={"2xl"}>
           Sort by Price
         </Text>
-        <Stack
+
+        <Box
         rounded={"lg"}
-        // bg={useColorModeValue("white", "gray.700")}
-        // boxShadow={"lg"}
-        bgImage={"/wave.jpg"}
-        p={6}
           borderRadius={"10px"}
           ml={"20%"}
           h={"100px"}
           // backgroundColor={"#9062bc"}
-          color={"white "}
+          color={"black"}
           mt={"3%"}
           direction="column"
         >
@@ -181,6 +180,7 @@ const Birthday = ({ birthData }) => {
             colorScheme="white"
             color={"black "}
             defaultChecked
+            onClick={HtoL}
           >
             Low to High
           </Radio>
@@ -188,34 +188,9 @@ const Birthday = ({ birthData }) => {
           <Radio size="lg" name="1" colorScheme="white" defaultChecked>
             High to Low
           </Radio>
-        </Stack>
+        </Box>
 
-        <Text ml={"20%"} mt={"10%"} color={"#9062bc"} fontSize={"2xl"}>
-          Filter By Names
-        </Text>
-        <Stack
-          borderRadius={"10px"}
-          h={"100px"}
-          backgroundColor={"#9062bc"}
-          ml={"20%"}
-          color={"white "}
-          mt={"3%"}
-          direction="column"
-        >
-          <Radio
-            mt={"25px"}
-            size="lg"
-            name="1"
-            colorScheme="white"
-            defaultChecked
-          >
-            Ascending
-          </Radio>
-
-          <Radio size="lg" name="1" colorScheme="white" defaultChecked>
-            Descending
-          </Radio>
-        </Stack>
+        
 
         <Text ml={"20%"} mt={"10%"} color={"#9062bc"} fontSize={"2xl"}>
           Filter by Category
@@ -223,24 +198,16 @@ const Birthday = ({ birthData }) => {
         <Stack
           borderRadius={"10px"}
           h={"250px"}
-          backgroundColor={"#9062bc"}
+          // backgroundColor={"#9062bc"}
           ml={"20%"}
-          color={"white "}
+          color={"black"}
           mt={"3%"}
           direction="column"
         >
-          <Radio
-            mt={"25px"}
-            size="lg"
-            name="1"
-            colorScheme="white"
-            defaultChecked
-          >
-            Ascending
-          </Radio>
+          
 
           <Radio size="lg" name="1" colorScheme="white" defaultChecked>
-            Birthday
+            sympathy
           </Radio>
           <Radio size="lg" name="1" colorScheme="white" defaultChecked>
             Occasion
@@ -249,16 +216,16 @@ const Birthday = ({ birthData }) => {
             Flower
           </Radio>
           <Radio size="lg" name="1" colorScheme="white" defaultChecked>
-            Gifts and Food
+            Gifts 
           </Radio>
           <Radio size="lg" name="1" colorScheme="white" defaultChecked>
-            Sympathy
+            Food
           </Radio>
         </Stack>
       </Box>
       <Box border={"0px solid blue"} ml={"20%"} width={"80%"}>
         <Grid templateColumns={"repeat(3,1fr)"} gap={6}>
-          {page.map((el) => (
+          {data.map((el) => (
             <GridItem maxW="sm">
               <Card>
                 <CardBody>
