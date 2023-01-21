@@ -7,22 +7,15 @@ import {
   Heading,
   Text,
   useColorModeValue,
-  // Link,
   FormLabel,
 } from "@chakra-ui/react";
-import {
-  signInWithPopup,
-  createUserWithEmailAndPassword,
-  signOut,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { signOut, signInWithEmailAndPassword } from "firebase/auth";
 import Image from "next/image";
 import { useState } from "react";
 import { auth, provider } from "./firebase/firebase-config";
 import Link from "next/link";
 
 export default function Login() {
-  //---------------Signup------------------//
   const [emailSignIn, setEmailSignIn] = useState("");
   const [passwordSignIn, setPasswordSignIn] = useState("");
 
@@ -37,10 +30,9 @@ export default function Login() {
         password
       );
       const user = userCredential.user;
-      // console.log(user);
+
       setEmailSignIn("");
       setPasswordSignIn("");
-      // ------------------Routing to home page-------------------------//
     } catch (error) {
       alert("Wrong Credentials");
       console.log(error);
@@ -50,7 +42,6 @@ export default function Login() {
     try {
       await signOut(auth);
       alert("Logout Successful");
-      // ------------------Routing to home page-------------------------//
     } catch (error) {
       console.log(error);
     }

@@ -1,4 +1,4 @@
-// https://mock-server-f2z5.onrender.com/
+
 import React from "react";
 
 import { useState } from "react";
@@ -17,9 +17,9 @@ import {
   Grid,
   GridItem,
 } from "@chakra-ui/react";
-// import {BsCircle} from "react-icons/bs"
+
 const preserved= ({ data }) => {
-  // console.log(proj)
+  
   const [page, setPage] = useState(data);
   const loadmore = async () => {
     const res = await fetch(

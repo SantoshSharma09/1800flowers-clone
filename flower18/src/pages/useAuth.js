@@ -12,7 +12,6 @@ const useAuth = () => {
       } else {
         setCurrentUser(null);
       }
-      // console.log(user);
     });
     return unSubscribe;
   }, []);

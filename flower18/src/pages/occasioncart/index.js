@@ -41,7 +41,7 @@ const Pages = ({ data }) => {
   );
 };
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const r = await fetch(
     `https://fine-erin-turkey-hose.cyclic.app/occasioncart`
   );

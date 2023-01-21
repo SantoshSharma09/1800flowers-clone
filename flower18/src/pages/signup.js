@@ -7,7 +7,6 @@ import {
   Heading,
   Text,
   useColorModeValue,
-  // Link,
   FormLabel,
 } from "@chakra-ui/react";
 import { signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
@@ -18,13 +17,10 @@ import { auth, db, provider } from "./firebase/firebase-config";
 import Link from "next/link";
 
 export default function Signup() {
-  //---------------Signup------------------//
   const [emailSignUp, setEmailSignUp] = useState("");
   const [passwordSignUp, setPasswordSignUp] = useState("");
 
   const Signup = async () => {
-    // console.log(emailSignUp);
-    // console.log(passwordSignUp);
     try {
       const email = emailSignUp;
       const password = passwordSignUp;
@@ -35,14 +31,12 @@ export default function Signup() {
         password
       );
       const user = userCredential.user;
-      // console.log(user);
 
       const usersCollectionRef = doc(db, "users", user.uid);
       await setDoc(usersCollectionRef, { email, password });
 
       setEmailSignUp("");
       setPasswordSignUp("");
-      // ------------------Routing to home page-------------------------//
     } catch (error) {
       console.log(error);
     }
@@ -54,11 +48,9 @@ export default function Signup() {
       const user = userCredential.user;
       const name = user.displayName;
       const email = user.email;
-      // console.log(name, email);
+
       const usersCollectionRef = doc(db, "users", user.uid);
       await setDoc(usersCollectionRef, { email, googleAuth: true });
-      // ------------------Routing to home page-------------------------//
-      // console.log(userCredential);
     } catch (error) {
       console.log(error);
     }

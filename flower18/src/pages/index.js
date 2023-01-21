@@ -5,15 +5,12 @@ import { animateScroll as scroll } from "react-scroll";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import {
   Box,
-  Button,
   Center,
   Collapse,
   Heading,
-  Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import Head from "next/head";
-import Navbar from "./components/Navbar";
 
 const data = [
   {
@@ -269,7 +266,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.PNG" />
       </Head>
-      {/* <Navbar /> */}
       <div style={{ marginTop: "200px" }}>
         <div className={styles.banner1}>
           <img
@@ -476,14 +472,7 @@ export default function Home() {
           </Heading>
         </Center>
         <Collapse in={!isOpen} animateOpacity>
-          <Box
-            p="40px"
-            color="black"
-            mt="4"
-            // bg="teal.500"
-            rounded="md"
-            shadow="md"
-          >
+          <Box p="40px" color="black" mt="4" rounded="md" shadow="md">
             <Heading as="h4" size="14px" bg="#E8EAEC" p="10px">
               Send Flowers Online with Flower Delivery by 1-800-Flowers.com, the
               World's Favorite Florist!
@@ -614,7 +603,6 @@ export default function Home() {
         <div
           style={{
             float: "right",
-            // marginLeft: "1300px",
             border: "1px solid black",
             marginRight: "20px",
             backgroundColor: "white",
@@ -632,7 +620,6 @@ export default function Home() {
             <Center>
               <AiOutlineArrowUp />
             </Center>
-            {/* <p>Move Top</p> */}
           </button>
         </div>
         <br />
