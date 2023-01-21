@@ -111,8 +111,9 @@ a {
   width: 100%;
   height: 20px;
   color: white;
-  /* position: sticky;
-  top: 0; */
+  position: fixed;
+  top: 0;
+  margin-top:-8px;
 }
 .navbar1 {
   /* border: 1px solid red; */
@@ -143,7 +144,7 @@ a {
 .nav2img {
   flex: 1;
   padding: 8px;
-  height: 60px;
+  height: 45px;
   border-right: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
 }
@@ -155,7 +156,7 @@ a {
   background-color: white;
   display: flex;
   width: 100%;
-  height: auto;
+  height: 4rem;
   align-items: center;
   justify-content: space-around;
 }
@@ -235,11 +236,11 @@ a {
 }
 nav {
   background: white;
-  /* position: fixed;
-  top: 0; */
+  /* position: fixed; */
+  /* top: 0; */
   width: 100%;
   z-index: 999;
-  height: 65px;
+  height: 55px;
   line-height: 65px;
   font-family: sans-serif;
 }
@@ -269,7 +270,7 @@ nav .wrapper {
 .nav-links li a {
   color: black;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   padding: 9px 15px;
   border-radius: 5px;
@@ -334,4 +335,11 @@ nav .wrapper {
 .row .mega-links li a:hover {
   color: white;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 576px) {
+ .navbar{
+  width:100%
+ }
+}
+
 /* ---------- */

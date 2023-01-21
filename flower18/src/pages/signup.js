@@ -7,7 +7,7 @@ import {
   Heading,
   Text,
   useColorModeValue,
-  Link,
+  // Link,
   FormLabel,
 } from "@chakra-ui/react";
 import { signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
@@ -15,6 +15,7 @@ import { doc, setDoc } from "firebase/firestore";
 import Image from "next/image";
 import { useState } from "react";
 import { auth, db, provider } from "./firebase/firebase-config";
+import Link from "next/link";
 
 export default function Signup() {
   //---------------Signup------------------//
@@ -41,6 +42,7 @@ export default function Signup() {
 
       setEmailSignUp("");
       setPasswordSignUp("");
+      // ------------------Routing to home page-------------------------//
     } catch (error) {
       console.log(error);
     }
@@ -55,6 +57,7 @@ export default function Signup() {
       // console.log(name, email);
       const usersCollectionRef = doc(db, "users", user.uid);
       await setDoc(usersCollectionRef, { email, googleAuth: true });
+      // ------------------Routing to home page-------------------------//
       // console.log(userCredential);
     } catch (error) {
       console.log(error);
@@ -68,9 +71,14 @@ export default function Signup() {
       justify={"center"}
       bg={useColorModeValue("gray.50", "gray.800")}
     >
-      <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
+      <Stack spacing={8} mx={"auto"} w={500} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
-          <Image src={"/logo.png"} alt="Logo" width={150} height={150} />
+          <Image
+            src={"/Circle Flower Natural Brand Logo (1).png"}
+            alt="Logo"
+            width={150}
+            height={150}
+          />
           <Heading fontSize={"4xl"} textAlign={"center"}>
             Sign up
           </Heading>
@@ -79,7 +87,8 @@ export default function Signup() {
           rounded={"lg"}
           bg={useColorModeValue("white", "gray.700")}
           boxShadow={"lg"}
-          p={8}
+          bgImage={"/wave.jpg"}
+          p={6}
         >
           <Stack spacing={4}>
             <Box>
@@ -103,7 +112,9 @@ export default function Signup() {
                 onChange={(e) => setPasswordSignUp(e.target.value)}
               />
             </Box>
-            <Button onClick={Signup}>Sign Up</Button>
+            <Link href="/login">
+              <Button onClick={Signup}>Sign Up</Button>
+            </Link>
             <Button
               className="googlebtn"
               backgroundColor={"royalblue"}

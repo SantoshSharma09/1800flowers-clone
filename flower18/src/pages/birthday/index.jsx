@@ -60,6 +60,7 @@ const Birthday = ({ birthData }) => {
     setPage((val) => [...val, ...posts]);
   };
 
+
   const htol = async () => {
     let res = await fetch(
       `https://fine-erin-turkey-hose.cyclic.app/plants?_sort=price&_order=asc`
@@ -74,12 +75,31 @@ const Birthday = ({ birthData }) => {
     let data = await res.json();
     setPage(data);
   };
+
   console.log(page);
 
   return (
     <>
+
       
       <Box border={"0px solid black"} height={"700px"} display={"flex"}>
+
+      <Box mt={"15%"} mb={"50%"}>
+        <Input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="search"
+          style={{ border: "1px solid red" }}
+        />
+        <Button onClick={handleSearch}>SEARCH</Button>
+
+    <Box border={"0px solid black"} height={"700px"} display={"flex"}>
+      <Box width={"18%"} mt={"0%"} height={"600px"} position={"fixed"}>
+        <Text ml={"20%"} mt={"20%"} color={"#9062bc"} fontSize={"2xl"}>
+          Search By Name
+        </Text>
+
         
         <Box
           border={"0px solid red"}
@@ -163,6 +183,7 @@ const Birthday = ({ birthData }) => {
             mt={"3%"}
             direction="column"
           >
+
             <Radio
               mt={"25px"}
               size="lg"
@@ -228,6 +249,65 @@ const Birthday = ({ birthData }) => {
             Load More
           </Button>
         </Box>
+
+            Ascending
+          </Radio>
+
+          <Radio size="lg" name="1" colorScheme="white" defaultChecked>
+            Birthday
+          </Radio>
+          <Radio size="lg" name="1" colorScheme="white" defaultChecked>
+            Occasion
+          </Radio>
+          <Radio size="lg" name="1" colorScheme="white" defaultChecked>
+            Flower
+          </Radio>
+          <Radio size="lg" name="1" colorScheme="white" defaultChecked>
+            Gifts and Food
+          </Radio>
+          <Radio size="lg" name="1" colorScheme="white" defaultChecked>
+            Sympathy
+          </Radio>
+        </Stack>
+      </Box>
+      <Box border={"0px solid blue"} ml={"20%"} width={"80%"}>
+        <Grid templateColumns={"repeat(3,1fr)"} gap={6}>
+          {page.map((el) => (
+            <GridItem maxW="sm" key={el.id}>
+              <Card>
+                <CardBody>
+                  <Image
+                    src={el.img}
+                    alt="Green double couch with wooden legs"
+                    borderRadius="lg"
+                  />
+                  <Image
+                    mt={"20px"}
+                    width={"60%"}
+                    src="https://images.contentstack.io/v3/assets/bltdd99f24e8a94d536/blt8d4549d3cac15860/61e09d4f2e109d6c649d4aa4/PP_EligibleIcon.svg"
+                  />
+
+                  <Stack mt="6" spacing="3">
+                    <Heading size="md">{el.mbp318}</Heading>
+                    <Heading size="sm">{el.name}</Heading>
+                    <Flex gap={10}>
+                      <Text color="#734f96" fontSize="2xl">
+                        {el.price}
+                      </Text>
+                      <Link href={`birthday/${el.id}`}>
+                        <Button colorScheme="purple">Check Out</Button>
+                      </Link>
+                    </Flex>
+                  </Stack>
+                </CardBody>
+              </Card>
+            </GridItem>
+          ))}
+        </Grid>
+        <Button onClick={loadmore} ml={"40%"} colorScheme="purple">
+          Load More
+        </Button>
+
       </Box>
     </>
   );

@@ -110,7 +110,12 @@ export default function Navbar() {
       </div>
       <div className="navbar3">
         <div className="img">
-          <Image src={"/me.png"} alt="Logo" width={80} height={80} />
+          <Image
+            src={"/Circle Flower Natural Brand Logo (1).png"}
+            alt="Logo"
+            width={60}
+            height={60}
+          />
         </div>
         <div className="inputbtn">
           <input type="text" placeholder="Enter Keyword or Product Number" />
@@ -153,7 +158,8 @@ export default function Navbar() {
             </div>
             <ul className="nav-links">
               <li>
-                <a href="#">VALENTINE</a>
+                <Link href="/valentine">VALENTINE</Link>
+
                 <div className="mega-box">
                   <div className="content">
                     <div className="row">
@@ -230,7 +236,7 @@ export default function Navbar() {
                 </div>
               </li>
               <li>
-                <a href="#">BIRTHDAY</a>
+                <Link href="/birthday">BIRTHDAY</Link>
                 <div className="mega-box">
                   <div className="content">
                     <div className="row">
@@ -305,7 +311,7 @@ export default function Navbar() {
                 </div>
               </li>
               <li>
-                <a href="#">SYMPATHY</a>
+                <Link href="/sympathy">SYMPATHY</Link>
                 <div className="mega-box">
                   <div className="content">
                     <div className="row">
@@ -380,7 +386,7 @@ export default function Navbar() {
                 </div>
               </li>
               <li>
-                <a href="#">OCCASION</a>
+                <Link href="/occasion">OCCASION</Link>
                 <div className="mega-box">
                   <div className="content">
                     <div className="row">
@@ -457,7 +463,7 @@ export default function Navbar() {
                 </div>
               </li>
               <li>
-                <a href="#">FLOWERS</a>
+                <Link href="/flowers">FLOWERS</Link>
                 <div className="mega-box">
                   <div className="content">
                     <div className="row">
@@ -534,7 +540,7 @@ export default function Navbar() {
                 </div>
               </li>
               <li>
-                <a href="#">GIFTS & MORE</a>
+                <Link href="/gifts">GIFTS & MORE</Link>
                 <div className="mega-box">
                   <div className="content">
                     <div className="row">
@@ -609,7 +615,7 @@ export default function Navbar() {
                 </div>
               </li>
               <li>
-                <a href="#">SALE</a>
+                <Link href="/sale">SALE</Link>
               </li>
             </ul>
           </div>
