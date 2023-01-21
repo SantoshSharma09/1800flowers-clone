@@ -7,7 +7,7 @@ import {
   Heading,
   Text,
   useColorModeValue,
-  Link,
+  // Link,
   FormLabel,
 } from "@chakra-ui/react";
 import {
@@ -19,7 +19,7 @@ import {
 import Image from "next/image";
 import { useState } from "react";
 import { auth, provider } from "./firebase/firebase-config";
-// import { Link } from "next/link";
+import Link from "next/link";
 
 export default function Login() {
   //---------------Signup------------------//
@@ -97,10 +97,14 @@ export default function Login() {
                 onChange={(e) => setPasswordSignIn(e.target.value)}
               />
             </Box>
-            <Button onClick={Login}>Login</Button>
-            <Button my="2" onClick={Logout}>
-              Logout
-            </Button>
+            <Link href="/">
+              <Button onClick={Login}>Login</Button>
+            </Link>
+            <Link href="/">
+              <Button my="2" onClick={Logout}>
+                Logout
+              </Button>
+            </Link>
           </Stack>
         </Box>
       </Stack>

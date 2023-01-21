@@ -272,7 +272,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.PNG" />
       </Head>
-      <Navbar />
+      {/* <Navbar /> */}
       <div style={{ marginTop: "280px" }}>
         <div className={styles.banner1}>
           <img

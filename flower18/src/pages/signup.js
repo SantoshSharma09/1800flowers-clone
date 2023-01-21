@@ -7,7 +7,7 @@ import {
   Heading,
   Text,
   useColorModeValue,
-  Link,
+  // Link,
   FormLabel,
 } from "@chakra-ui/react";
 import { signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
@@ -15,6 +15,7 @@ import { doc, setDoc } from "firebase/firestore";
 import Image from "next/image";
 import { useState } from "react";
 import { auth, db, provider } from "./firebase/firebase-config";
+import Link from "next/link";
 
 export default function Signup() {
   //---------------Signup------------------//
@@ -104,7 +105,9 @@ export default function Signup() {
                 onChange={(e) => setPasswordSignUp(e.target.value)}
               />
             </Box>
-            <Button onClick={Signup}>Sign Up</Button>
+            <Link href="/login">
+              <Button onClick={Signup}>Sign Up</Button>
+            </Link>
             <Button
               className="googlebtn"
               backgroundColor={"royalblue"}
