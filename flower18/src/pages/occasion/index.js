@@ -48,8 +48,6 @@ const Occasion = ({ occasion }) => {
       });
   }, []);
 
-  
-
   const loadmore = async () => {
     const res = await fetch(
       `https://fine-erin-turkey-hose.cyclic.app/occasion?_limit=27&&_start=28`
@@ -75,23 +73,14 @@ const Occasion = ({ occasion }) => {
 
   return (
     <>
-      
       <Box border={"0px solid black"} height={"700px"} display={"flex"}>
-        <Box width={"18%"} mt={"0%"} height={"600px"} position={"fixed"}>
-          {/* <Text ml={"20%"} mt={"20%"} color={"#9062bc"} fontSize={"2xl"}>
-            Search By Name
-          </Text> */}
-        </Box>
         <Box
           border={"0px solid red"}
           width={"18%"}
           mt={"0%"}
           height={"600px"}
           position={"fixed"}
-          marginTop={"70px"}
         >
-          {/* <Input ml={"20%"} mt={"10%"} border={"1px solid #9062bc"} width={"150px"} placeholder="Enter"/>
-          <Button bgColor={"#9062bc"} color="white">Search</Button> */}
           <Text ml={"20%"} mt={"10%"} color={"#9062bc"} fontSize={"2xl"}>
             Sort by Price
           </Text>
@@ -111,7 +100,7 @@ const Occasion = ({ occasion }) => {
               colorScheme="white"
               color={"white "}
               defaultChecked
-              onClick={()=>ltoh()}
+              onClick={() => ltoh()}
             >
               Low to High
             </Radio>
@@ -121,7 +110,7 @@ const Occasion = ({ occasion }) => {
               name="1"
               colorScheme="white"
               defaultChecked
-              onClick={()=>htol(data)}
+              onClick={() => htol(data)}
             >
               High to Low
             </Radio>

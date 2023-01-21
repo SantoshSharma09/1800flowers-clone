@@ -1,3 +1,4 @@
+import { Heading, Input, Stack } from "@chakra-ui/react";
 import React, { useState } from "react";
 import styles from '../../styles/Admin.module.css'
 const AddProducts = ({ handleAddPro }) => {
@@ -21,49 +22,49 @@ const AddProducts = ({ handleAddPro }) => {
     handleAddPro(formState);
   };
   return (
-    <div>
+    
       <div className={styles.admincontainer}>
         <div className={styles.wrapper}>
-          <h1 className="Title">ADMIN CAN MODIFIE THE PRODUCTS</h1>
+          <h1 className={styles.title}>ADMIN CAN MODIFIE THE PRODUCTS</h1>
           <form onSubmit={handleSubmit} className="Form">
             <div className="inp-box">
-              <input
+              <Input
                 type="text"
                 name="name"
                 value={formState.name}
                 onChange={handleChange}
                 placeholder="Product Name"
-                className="inp-boxx"
+                className={styles.inpboxx}
               />
             </div>
             <div className="inp-box">
-              <input
+              <Input
                 type="link"
                 name="img"
                 value={formState.img}
                 onChange={handleChange}
                 placeholder="Product Image"
-                className="inp-boxx"
+                className={styles.inpboxx}
               />
             </div>
             <div className="inp-box">
-              <input
+              <Input
                 type="number"
                 name="price"
                 value={formState.price}
                 onChange={handleChange}
                 placeholder="Product Price"
-                className="inp-boxx"
+                className={styles.inpboxx}
               />
             </div>
             <div>
-              <input type="submit" value="Submit" className="sub-btn" />
+              <input type="submit" value="Submit" className={styles.button73}/>
             </div>
-            <button>Logout</button>
+            <button className={styles.button73}>Logout</button>
           </form>
         </div>
       </div>
-    </div>
+    
   );
 };
 

@@ -1,38 +1,77 @@
-.admincontainer{
-    height: 600px;
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(
-        rgba(185, 179, 179, 0.5),
-        rgba(231, 226, 226, 0.5)
-      ),
-      url("https://img.freepik.com/premium-vector/dashboard-ui-admin-panel-design-template-with-infographic-elements_9209-2835.jpg?w=1380")
-      center;
-  
-      display: flex;
-      align-items: center;
-      justify-content: center;
+
+.title{
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 12%;
+  color: rgb(255, 255, 255);
+}
+  .admincontainer{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 640px;
+    
   }
   .wrapper{
-    width: 40%;
-    padding: 20px;
-    background-color: rgb(243, 240, 214);
-    opacity: 70%;
-  }
-  .Title{
-    font-size: 24px;
-    font-weight: 300;
-  }
-  .Form{
     display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+    width:30rem;
     flex-direction: column;
+    height: 600px;
+    
+    
+    background: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
+   
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+     }
+  .inpboxx{
+    width: 100%;
+    border: 1px solid #aaa;
+    background-color: white;
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 4px;
+    box-sizing: border-box;
   }
-  .inp-box{
-    padding: 7px;
-  }
-  .sub-btn{
-    width: 30%;
-    background-color: rgb(20, 117, 173);
-    border: none;
-    border-radius: 20px;
-  }
+
+
+  
+.button73 {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-radius: 40em;
+  border-style: none;
+  box-shadow: #af81e4 0 -12px 6px inset;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: -.24px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  margin-left: 60px;
+  text-decoration: none;
+  transition: all .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 5%;
+}
+
+.button73:active {
+  transform: scale(1.025);
+}
