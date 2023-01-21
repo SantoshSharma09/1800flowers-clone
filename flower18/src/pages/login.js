@@ -40,6 +40,7 @@ export default function Login() {
       // console.log(user);
       setEmailSignIn("");
       setPasswordSignIn("");
+      // ------------------Routing to home page-------------------------//
     } catch (error) {
       alert("Wrong Credentials");
       console.log(error);
@@ -49,6 +50,7 @@ export default function Login() {
     try {
       await signOut(auth);
       alert("Logout Successful");
+      // ------------------Routing to home page-------------------------//
     } catch (error) {
       console.log(error);
     }
@@ -63,7 +65,12 @@ export default function Login() {
     >
       <Stack spacing={8} mx={"auto"} w={500} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
-          <Image src={"/logo.png"} alt="Logo" width={150} height={150} />
+          <Image
+            src={"/Circle Flower Natural Brand Logo (1).png"}
+            alt="Logo"
+            width={150}
+            height={150}
+          />
           <Heading fontSize={"4xl"} textAlign={"center"}>
             Login
           </Heading>

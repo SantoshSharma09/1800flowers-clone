@@ -110,7 +110,12 @@ export default function Navbar() {
       </div>
       <div className="navbar3">
         <div className="img">
-          <Image src={"/me.png"} alt="Logo" width={60} height={60} />
+          <Image
+            src={"/Circle Flower Natural Brand Logo (1).png"}
+            alt="Logo"
+            width={60}
+            height={60}
+          />
         </div>
         <div className="inputbtn">
           <input type="text" placeholder="Enter Keyword or Product Number" />
