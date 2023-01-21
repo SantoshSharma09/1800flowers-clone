@@ -33,16 +33,21 @@ import { MdLocalShipping } from "react-icons/md";
 import { FiChevronDown } from "react-icons/fi";
 import { BiNotepad } from "react-icons/bi";
 import { BsShop } from "react-icons/bs";
+
 const category = ({ data }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();
-  
+
   const handleAdd = async () => {
     alert("Successfully added to cart");
     await axios
       .post(` https://fine-erin-turkey-hose.cyclic.app/addtocart/`, data)
       .then((res) => router.push("/addtocart"))
       .catch((er) => console.log(er));
+  };
+
+  const move = () => {
+    router.push("/addtocart");
   };
 
   return (
@@ -235,6 +240,7 @@ const category = ({ data }) => {
             </Box>
           </Stack>
         </SimpleGrid>
+        <p onClick={move}>cart</p>
       </Container>
     </div>
   );
@@ -242,7 +248,7 @@ const category = ({ data }) => {
 export default category;
 
 export async function getStaticPaths() {
-  let r = await fetch(`https://fine-erin-turkey-hose.cyclic.app/Birthday`);
+  let r = await fetch(`https://mock-server-f2z5.onrender.com/daisy`);
   let d = await r.json();
 
   return {
@@ -254,9 +260,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   console.log(context);
   const { id } = context.params;
-  const r = await fetch(
-    `https://fine-erin-turkey-hose.cyclic.app/Birthday/${id}`
-  );
+  const r = await fetch(`https://mock-server-f2z5.onrender.com/daisy/${id}`);
   const d = await r.json();
   return {
     props: {

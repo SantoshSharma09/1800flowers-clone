@@ -251,7 +251,6 @@ export default function Home() {
   const [show, setShow] = useState(false);
   const { isOpen, onToggle } = useDisclosure();
 
-
   useEffect(() => {
     window.addEventListener("scroll", () => {
       return window.scrollY > 500 ? setShow(true) : setShow(false);
@@ -262,8 +261,6 @@ export default function Home() {
     scroll.scrollToTop();
   };
 
- 
-
   return (
     <>
       <Head>
@@ -273,7 +270,7 @@ export default function Home() {
         <link rel="icon" href="/logo.PNG" />
       </Head>
       {/* <Navbar /> */}
-      <div style={{ marginTop: "280px" }}>
+      <div style={{ marginTop: "200px" }}>
         <div className={styles.banner1}>
           <img
             className={styles.im}

@@ -37,13 +37,11 @@ const category = ({ data }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();
   const handleAdd = async () => {
+    alert("Successfully added to cart");
     await axios
-      .post(` https://fine-erin-turkey-hose.cyclic.app/plantscart/`, data)
-      .then(
-        (res) => alert("Successfully added to cart"),
-        router.push("/plantscart")
-      )
-      .catch((er) => alert(er));
+      .post(` https://fine-erin-turkey-hose.cyclic.app/addtocart/`, data)
+      .then((res) => router.push("/addtocart"))
+      .catch((er) => console.log(er));
   };
 
   return (

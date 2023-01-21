@@ -21,19 +21,43 @@ const Pages = ({ data }) => {
       });
   };
   return (
-    <div>
-      <h1>Cart Page</h1>
-      {data.map((el, ind) => {
-        return (
-          <div key={el.id}>
-            <img src={el.img} alt="img"></img>
-            <h1>{el.name}</h1>
-            <h1>{el.price}</h1>
-            <p>{el.category}</p>
-            <button onClick={() => handleRemove(el.id)}>Remove</button>
-          </div>
-        );
-      })}
+    <div style={{ marginTop: "220px",marginBottom:"200px" }}>
+      <div style={{ marginLeft: "100px" }}>
+        {data.map((el, ind) => {
+          return (
+            <div style={{ display: "flex" }} key={el.id}>
+              <div>
+                <img src={el.img} alt="img" />
+              </div>
+              <div style={{marginLeft:"20px" }}>
+                <h1 style={{ fontSize: "24px", fontWeight: "600" }}>
+                  {el.name}
+                </h1>
+                <h1 style={{ fontSize: "18px", fontWeight: "500" }}>
+                  {" "}
+                  Price : $ {el.price}
+                </h1>
+                <p style={{ fontSize: "18px", fontWeight: "500" }}>
+                  Category : {el.category}
+                </p>
+                <button
+                  style={{
+                    fontSize: "16px",
+                    fontWeight: "500",
+                    backgroundColor: "#65388B",
+                    color: "white",
+                    padding: "8px 10px 8px 10px",
+                    borderRadius: "5px",
+                  }}
+                  onClick={() => handleRemove(el.id)}
+                >
+                  Remove
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

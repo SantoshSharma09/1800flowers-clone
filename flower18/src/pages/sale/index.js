@@ -91,7 +91,7 @@ const Birthday = ({ birthData }) => {
             paddingTop: "20px",
           }}
         >
-          <p>Valentine</p>
+          <p>Sale</p>
         </div>
         <div
           style={{

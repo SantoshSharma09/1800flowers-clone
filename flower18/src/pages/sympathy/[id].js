@@ -36,7 +36,7 @@ import { BsShop } from "react-icons/bs";
 const category = ({ data }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();
-  
+
   const handleAdd = async () => {
     alert("Successfully added to cart");
     await axios
@@ -242,7 +242,7 @@ const category = ({ data }) => {
 export default category;
 
 export async function getStaticPaths() {
-  let r = await fetch(`https://fine-erin-turkey-hose.cyclic.app/Birthday`);
+  let r = await fetch(`https://mock-server-f2z5.onrender.com/plants`);
   let d = await r.json();
 
   return {
@@ -254,9 +254,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   console.log(context);
   const { id } = context.params;
-  const r = await fetch(
-    `https://fine-erin-turkey-hose.cyclic.app/Birthday/${id}`
-  );
+  const r = await fetch(`https://mock-server-f2z5.onrender.com/plants/${id}`);
   const d = await r.json();
   return {
     props: {

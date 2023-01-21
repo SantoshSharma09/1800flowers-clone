@@ -37,13 +37,14 @@ const category = ({ data }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();
   const handleAdd = async () => {
+    alert("Successfully added to cart");
     await axios
-      .post(` https://fine-erin-turkey-hose.cyclic.app/giftscart/`, data)
+      .post(` https://fine-erin-turkey-hose.cyclic.app/addtocart/`, data)
       .then(
-        (res) => alert("Successfully added to cart"),
-        router.push("/giftscart")
+        (res) => 
+        router.push("/addtocart")
       )
-      .catch((er) => alert(er));
+      .catch((er) => console.log(er));
   };
 
   return (
@@ -246,9 +247,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   console.log(context);
   const { id } = context.params;
-  const r = await fetch(
-    `https://fine-erin-turkey-hose.cyclic.app/gifts/${id}`
-  );
+  const r = await fetch(`https://fine-erin-turkey-hose.cyclic.app/gifts/${id}`);
   const d = await r.json();
   return {
     props: {

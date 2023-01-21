@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineLocalShipping } from "react-icons/md";
@@ -7,10 +7,15 @@ import { BiLogOut } from "react-icons/bi";
 import useAuth from "./../useAuth";
 import Link from "next/link";
 
-export default function Navbar() {
+export default function Navbar({ cartdata }) {
+  const [count, setCount] = useState(cartdata);
   const currentUser = useAuth();
 
-  // console.log(currentUser);
+  console.log("cart", cartdata);
+
+  useEffect(() => {
+    setCount(cartdata);
+  }, []);
 
   return (
     <div className="navbar">
@@ -110,12 +115,14 @@ export default function Navbar() {
       </div>
       <div className="navbar3">
         <div className="img">
+          <Link href="/">
           <Image
             src={"/Circle Flower Natural Brand Logo (1).png"}
             alt="Logo"
             width={60}
             height={60}
           />
+          </Link>
         </div>
         <div className="inputbtn">
           <input type="text" placeholder="Enter Keyword or Product Number" />
@@ -143,14 +150,16 @@ export default function Navbar() {
             <p>My Order</p>
           </div>
           <div className="child">
-            <div>
-              <CgShoppingCart className="nth" />
-            </div>
-            <p>Cart</p>
+            <Link href="/addtocart">
+              <div>
+                <CgShoppingCart className="nth" />
+              </div>
+              <p>Cart</p>
+            </Link>
           </div>
         </div>
       </div>
-      <div className="navbar4">
+      <div style={{ borderBottom: "1px solid black" }} className="navbar4">
         <nav>
           <div className="wrapper">
             <div className="logo">
@@ -160,7 +169,7 @@ export default function Navbar() {
               <li>
                 <Link href="/valentine">VALENTINE</Link>
 
-                <div className="mega-box">
+                {/* <div className="mega-box">
                   <div className="content">
                     <div className="row">
                       <Image
@@ -233,11 +242,11 @@ export default function Navbar() {
                       </ul>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </li>
               <li>
                 <Link href="/birthday">BIRTHDAY</Link>
-                <div className="mega-box">
+                {/* <div className="mega-box">
                   <div className="content">
                     <div className="row">
                       <Image
@@ -308,11 +317,11 @@ export default function Navbar() {
                       </ul>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </li>
               <li>
                 <Link href="/sympathy">SYMPATHY</Link>
-                <div className="mega-box">
+                {/* <div className="mega-box">
                   <div className="content">
                     <div className="row">
                       <Image
@@ -383,11 +392,11 @@ export default function Navbar() {
                       </ul>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </li>
               <li>
                 <Link href="/occasion">OCCASION</Link>
-                <div className="mega-box">
+                {/* <div className="mega-box">
                   <div className="content">
                     <div className="row">
                       <Image
@@ -460,11 +469,11 @@ export default function Navbar() {
                       </ul>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </li>
               <li>
                 <Link href="/flowers">FLOWERS</Link>
-                <div className="mega-box">
+                {/* <div className="mega-box">
                   <div className="content">
                     <div className="row">
                       <Image
@@ -537,11 +546,11 @@ export default function Navbar() {
                       </ul>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </li>
               <li>
                 <Link href="/gifts">GIFTS & MORE</Link>
-                <div className="mega-box">
+                {/* <div className="mega-box">
                   <div className="content">
                     <div className="row">
                       <Image
@@ -612,7 +621,7 @@ export default function Navbar() {
                       </ul>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </li>
               <li>
                 <Link href="/sale">SALE</Link>
@@ -623,4 +632,15 @@ export default function Navbar() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const r = await fetch(`https://fine-erin-turkey-hose.cyclic.app/addtocart`);
+  const d = await r.json();
+
+  return {
+    props: {
+      cartdata: d,
+    },
+  };
 }
