@@ -122,13 +122,20 @@ const Birthday = ({ birthData }) => {
     setPage((val) => [...val, ...posts]);
   };
 
-  // const HtoL=async()=>{
-  //   const res=await fetch(`
-  //   https://fine-erin-turkey-hose.cyclic.app/Birthday?_sort=price&_order=asc&&_limit=6&&_start=6
-  //   `);
-  //   const posts=await res.json();
-  //   setPage((val)=>[...val,...posts])
-  // }
+  const htol = async () => {
+    let res = await fetch(
+      `https://fine-erin-turkey-hose.cyclic.app/plants?_sort=price&_order=asc`
+    );
+    let data = await res.json();
+    setPage(data);
+  };
+  const ltoh = async () => {
+    let res = await fetch(
+      `https://fine-erin-turkey-hose.cyclic.app/plants?_sort=price&_order=desc`
+    );
+    let data = await res.json();
+    setPage(data);
+  };
   console.log(page);
 
   return (
@@ -175,11 +182,12 @@ const Birthday = ({ birthData }) => {
             colorScheme="white"
             color={"white "}
             defaultChecked
+            onClick={()=>htol()}
           >
             Low to High
           </Radio>
 
-          <Radio size="lg" name="1" colorScheme="white" defaultChecked>
+          <Radio size="lg" name="1" colorScheme="white" defaultChecked onClick={()=>ltoh()}>
             High to Low
           </Radio>
         </Stack>
@@ -253,7 +261,7 @@ const Birthday = ({ birthData }) => {
       <Box border={"0px solid blue"} ml={"20%"} width={"80%"}>
         <Grid templateColumns={"repeat(3,1fr)"} gap={6}>
           {page.map((el) => (
-            <GridItem maxW="sm">
+            <GridItem maxW="sm" key={el.id}>
               <Card>
                 <CardBody>
                   <Image

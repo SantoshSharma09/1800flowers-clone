@@ -1,4 +1,4 @@
-// https://mock-server-f2z5.onrender.com/
+
 import React from "react";
 
 import { useState } from "react";

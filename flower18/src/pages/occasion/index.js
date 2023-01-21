@@ -38,22 +38,6 @@ const Occasion = ({ occasion }) => {
     );
   }
 
-  const htol = async () => {
-    console.log("fiine")
-    let res = await fetch(
-      `https://fine-erin-turkey-hose.cyclic.app/occasion?_sort=price&_order=asc?_limit=6&&_start=7`
-    );
-    let data = await res.json();
-    setData(data);
-  };
-  const ltoh= async () => {
-    console.log("fiine")
-    let res = await fetch(
-      `https://fine-erin-turkey-hose.cyclic.app/occasion?_sort=price&_order=asc?_limit=6&&_start=7`
-    );
-    let data = await res.json();
-    setData(data);
-  };
   useEffect(() => {
     FetchProduct("")
       .then((res) => {
@@ -73,7 +57,20 @@ const Occasion = ({ occasion }) => {
     const posts = await res.json();
     setPage((val) => [...val, ...posts]);
   };
-
+  const htol = async () => {
+    let res = await fetch(
+      `https://fine-erin-turkey-hose.cyclic.app/plants?_sort=price&_order=asc`
+    );
+    let data = await res.json();
+    setPage(data);
+  };
+  const ltoh = async () => {
+    let res = await fetch(
+      `https://fine-erin-turkey-hose.cyclic.app/plants?_sort=price&_order=desc`
+    );
+    let data = await res.json();
+    setPage(data);
+  };
   console.log(data);
 
   return (
@@ -93,8 +90,8 @@ const Occasion = ({ occasion }) => {
           position={"fixed"}
           marginTop={"70px"}
         >
-          <Input ml={"20%"} mt={"10%"} border={"1px solid #9062bc"} width={"150px"} placeholder="Enter"/>
-          <Button bgColor={"#9062bc"} color="white">Search</Button>
+          {/* <Input ml={"20%"} mt={"10%"} border={"1px solid #9062bc"} width={"150px"} placeholder="Enter"/>
+          <Button bgColor={"#9062bc"} color="white">Search</Button> */}
           <Text ml={"20%"} mt={"10%"} color={"#9062bc"} fontSize={"2xl"}>
             Sort by Price
           </Text>
@@ -199,7 +196,7 @@ const Occasion = ({ occasion }) => {
         <Box border={"0px solid blue"} ml={"20%"} width={"80%"}>
           <Grid templateColumns={"repeat(3,1fr)"} gap={6}>
             {page.map((el) => (
-              <GridItem maxW="sm">
+              <GridItem maxW="sm" key={el.id}>
                 <Card>
                   <CardBody>
                     <Image

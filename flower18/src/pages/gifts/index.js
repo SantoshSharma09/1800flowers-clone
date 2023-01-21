@@ -21,76 +21,45 @@ import {
   GridItem,
   Input,
 } from "@chakra-ui/react";
-// import {BsCircle} from "react-icons/bs"
 
 const Gifts = ({ gifts }) => {
-  // console.log(proj)
-
   const [page, setPage] = useState(gifts);
-  const [query, setQuery] = useState("");
+
   const [data, setData] = useState([]);
 
-  function FetchProduct(query) {
-    return axios.get(
-      `
-      https://fine-erin-turkey-hose.cyclic.app/gifts?q=${query}
-  `
-    );
-  }
-
-  useEffect(() => {
-    FetchProduct("")
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((er) => {
-        console.log("err:", er);
-      });
-  }, []);
-
-  const handleSearch = () => {
-    FetchProduct(query)
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((err) => {
-        console.log("err:", err);
-      });
-  };
 
   const loadmore = async () => {
     const res = await fetch(
-      `https://fine-erin-turkey-hose.cyclic.app/gifts?_limit=27&&_start=28`
+      `https://fine-erin-turkey-hose.cyclic.app/gifts?_limit=6&&_start=6`
     );
     const posts = await res.json();
     setPage((val) => [...val, ...posts]);
   };
-
+  const htol = async () => {
+    let res = await fetch(
+      `https://fine-erin-turkey-hose.cyclic.app/plants?_sort=price&_order=asc`
+    );
+    let data = await res.json();
+    setPage(data);
+  };
+  const ltoh = async () => {
+    let res = await fetch(
+      `https://fine-erin-turkey-hose.cyclic.app/plants?_sort=price&_order=desc`
+    );
+    let data = await res.json();
+    setPage(data);
+  };
   console.log(page);
 
   return (
     <>
-      <Input
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="search"
-        style={{ border: "1px solid red" }}
-      />
-      <Button onClick={handleSearch}>SEARCH</Button>
       <Box border={"0px solid black"} height={"700px"} display={"flex"}>
-        <Box width={"18%"} mt={"0%"} height={"600px"} position={"fixed"}>
-          <Text ml={"20%"} mt={"20%"} color={"#9062bc"} fontSize={"2xl"}>
-            Search By Name
-          </Text>
-        </Box>
         <Box
           border={"0px solid red"}
           width={"18%"}
           mt={"0%"}
           height={"600px"}
           position={"fixed"}
-          marginTop={"70px"}
         >
           <Text ml={"20%"} mt={"20%"} color={"#9062bc"} fontSize={"2xl"}>
             Sort by Price
@@ -111,11 +80,18 @@ const Gifts = ({ gifts }) => {
               colorScheme="white"
               color={"white "}
               defaultChecked
+              onClick={() => htol()}
             >
               Low to High
             </Radio>
 
-            <Radio size="lg" name="1" colorScheme="white" defaultChecked>
+            <Radio
+              size="lg"
+              name="1"
+              colorScheme="white"
+              defaultChecked
+              onClick={() => ltoh()}
+            >
               High to Low
             </Radio>
           </Stack>
@@ -189,7 +165,7 @@ const Gifts = ({ gifts }) => {
         <Box border={"0px solid blue"} ml={"20%"} width={"80%"}>
           <Grid templateColumns={"repeat(3,1fr)"} gap={6}>
             {page.map((el) => (
-              <GridItem maxW="sm">
+              <GridItem maxW="sm" key={el.id}>
                 <Card>
                   <CardBody>
                     <Image
@@ -233,7 +209,7 @@ export default Gifts;
 
 export async function getStaticProps() {
   let res = await fetch(
-    `https://fine-erin-turkey-hose.cyclic.app/gifts?_limit=27`
+    `https://fine-erin-turkey-hose.cyclic.app/gifts?_limit=6`
   );
 
   let data = await res.json();
