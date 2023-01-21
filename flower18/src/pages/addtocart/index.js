@@ -2,6 +2,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import React from "react";
 import SinglePage from "../birthday/[id]";
+<<<<<<< HEAD
 import { Box,Text,Image ,Button,Flex,Divider} from "@chakra-ui/react";
 import {MdDeleteForever} from "react-icons/md"
 import {AiOutlineCheck} from "react-icons/ai"
@@ -122,16 +123,52 @@ const Pages=({data})=>{
         </Box>
   
     )
-}
+=======
 
-export async function getServerSideProps(context){
-    const r=await fetch(`https://fine-erin-turkey-hose.cyclic.app/addtocart`);
-    const d=await r.json()
+const Pages = ({ data }) => {
+  console.log(data);
+  const router = useRouter();
+  const refresh = () => {
+    router.replace(router.asPath);
+  };
+  const handleRemove = async (id) => {
+    await axios
+      .delete(`https://fine-erin-turkey-hose.cyclic.app/addtocart/${id}`)
+      .then((res) => {
+        alert("Delete");
+        refresh();
+      })
+      .catch((er) => {
+        alert(er);
+      });
+  };
+  return (
+    <div>
+      <h1>Cart Page</h1>
+      {data.map((el, ind) => {
+        return (
+          <div key={el.id}>
+            <img src={el.img} alt="img"></img>
+            <h1>{el.name}</h1>
+            <h1>{el.price}</h1>
+            <p>{el.category}</p>
+            <button onClick={() => handleRemove(el.id)}>Remove</button>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
-    return{
-        props:{
-            data:d
-        }
-    }
+export async function getServerSideProps(context) {
+  const r = await fetch(`https://fine-erin-turkey-hose.cyclic.app/addtocart`);
+  const d = await r.json();
+
+  return {
+    props: {
+      data: d,
+    },
+  };
+>>>>>>> main
 }
 export default Pages;
