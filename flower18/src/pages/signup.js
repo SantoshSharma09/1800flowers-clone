@@ -42,6 +42,7 @@ export default function Signup() {
 
       setEmailSignUp("");
       setPasswordSignUp("");
+      // ------------------Routing to home page-------------------------//
     } catch (error) {
       console.log(error);
     }
@@ -56,6 +57,7 @@ export default function Signup() {
       // console.log(name, email);
       const usersCollectionRef = doc(db, "users", user.uid);
       await setDoc(usersCollectionRef, { email, googleAuth: true });
+      // ------------------Routing to home page-------------------------//
       // console.log(userCredential);
     } catch (error) {
       console.log(error);
@@ -71,7 +73,12 @@ export default function Signup() {
     >
       <Stack spacing={8} mx={"auto"} w={500} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
-          <Image src={"/logo.png"} alt="Logo" width={150} height={150} />
+          <Image
+            src={"/Circle Flower Natural Brand Logo (1).png"}
+            alt="Logo"
+            width={150}
+            height={150}
+          />
           <Heading fontSize={"4xl"} textAlign={"center"}>
             Sign up
           </Heading>
