@@ -6,16 +6,35 @@ import { CgShoppingCart } from "react-icons/cg";
 import { BiLogOut } from "react-icons/bi";
 import useAuth from "./../useAuth";
 import Link from "next/link";
+import { signOut } from "firebase/auth";
+import { auth } from "./../firebase/firebase-config";
+import { Button } from "@chakra-ui/react";
 
-export default function Navbar({ cartdata }) {
-  const [count, setCount] = useState(cartdata);
+export default function Navbar() {
+  const [count, setCount] = useState([]);
   const currentUser = useAuth();
 
-  console.log("cart", cartdata);
+  console.log("cart", count);
+
+  const data = async () => {
+    let r = await fetch(`https://fine-erin-turkey-hose.cyclic.app/addtocart`);
+    let d = await r.json();
+    console.log("fetchdata", d);
+    setCount(d);
+  };
 
   useEffect(() => {
-    setCount(cartdata);
+    data();
   }, []);
+
+  const Logout = async () => {
+    try {
+      await signOut(auth);
+      alert("Logout Successful");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="navbar">
@@ -116,12 +135,12 @@ export default function Navbar({ cartdata }) {
       <div className="navbar3">
         <div className="img">
           <Link href="/">
-          <Image
-            src={"/Circle Flower Natural Brand Logo (1).png"}
-            alt="Logo"
-            width={60}
-            height={60}
-          />
+            <Image
+              src={"/Circle Flower Natural Brand Logo (1).png"}
+              alt="Logo"
+              width={60}
+              height={60}
+            />
           </Link>
         </div>
         <div className="inputbtn">
@@ -131,30 +150,34 @@ export default function Navbar({ cartdata }) {
         <div className="logoname">
           <div className="child">
             <Link href={"/login"}>
-              <BiLogOut className="nth" />
+              <BiLogOut onClick={Logout} className="nth" />
             </Link>
-            <Link href={"/login"}>Login/Logout</Link>
+
+            <p>Logout</p>
+            {/* <Button my="2" onClick={Logout}>
+              Logout
+            </Button> */}
           </div>
           <div className="child">
             <Link href="/signup">
               <CgProfile className="nth" />
             </Link>
             <Link href="/signup">
-              {currentUser ? currentUser?.displayName : "Profile/Signup"}
+              {currentUser ? currentUser?.displayName : "Login/Signup"}
             </Link>
           </div>
           <div className="child">
             <div>
-              <MdOutlineLocalShipping className="nth" />
+              <CgProfile className="nth" />
             </div>
-            <p>My Order</p>
+            <p>Admin</p>
           </div>
           <div className="child">
             <Link href="/addtocart">
               <div>
                 <CgShoppingCart className="nth" />
               </div>
-              <p>Cart</p>
+              <p>Cart ({count.length})</p>
             </Link>
           </div>
         </div>
@@ -634,10 +657,10 @@ export default function Navbar({ cartdata }) {
   );
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const r = await fetch(`https://fine-erin-turkey-hose.cyclic.app/addtocart`);
   const d = await r.json();
-
+  console.log("data", d);
   return {
     props: {
       cartdata: d,

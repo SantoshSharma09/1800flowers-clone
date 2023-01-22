@@ -62,6 +62,7 @@ export default function Signup() {
       align={"center"}
       justify={"center"}
       bg={useColorModeValue("gray.50", "gray.800")}
+      mt={"11%"}
     >
       <Stack spacing={8} mx={"auto"} w={500} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
@@ -107,15 +108,17 @@ export default function Signup() {
             <Link href="/login">
               <Button onClick={Signup}>Sign Up</Button>
             </Link>
-            <Button
-              className="googlebtn"
-              backgroundColor={"royalblue"}
-              color={"white"}
-              my="2"
-              onClick={signInWithGoogle}
-            >
-              Sign In Google
-            </Button>
+            <Link href="/">
+              <Button
+                className="googlebtn"
+                backgroundColor={"royalblue"}
+                color={"white"}
+                my="2"
+                onClick={signInWithGoogle}
+              >
+                Sign In Google
+              </Button>
+            </Link>
           </Stack>
         </Box>
       </Stack>
