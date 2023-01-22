@@ -10,6 +10,4 @@ DEPLOYED LINK : https://flower18.vercel.app/
 
 ![Screenshot (300)](https://user-images.githubusercontent.com/109611448/213923495-e777a1e2-be9a-4263-b22b-41077b592c19.png)
 
-![Screenshot (301)](https://user-images.githubusercontent.com/109611448/213923510-f797720b-5011-4af9-8607-27f1a5e99476.png)
-
 ![Screenshot (299)](https://user-images.githubusercontent.com/109611448/213923515-93866847-14d3-4f78-b883-846706157ba6.png)
