@@ -11,3 +11,7 @@ export const addProducts = (data) => {
     price: data.price,
   });
 };
+
+export const delProducts=(id)=>{
+  return axios.delete(`http://localhost:8080/admin/${id}`)
+}
