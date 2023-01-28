@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -7,8 +8,8 @@ const Footer = () => {
         style={{
           backgroundColor: "#65388B",
           marginTop: "0px",
-          color:"white",
-          paddingTop:"20px"
+          color: "white",
+          paddingTop: "20px",
         }}
         className="text-center text-lg-start "
       >
@@ -44,7 +45,7 @@ const Footer = () => {
             <div className="row mt-3">
               <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                 <h6 className="text-uppercase fw-bold mb-4">
-                  <i className="fas fa-gem me-3 text-secondary"></i>Company name
+                  <i className="fas fa-gem me-3 text-secondary"></i>Blossom.Com
                 </h6>
                 <p>
                   Here you can use rows and columns to organize your footer
@@ -102,7 +103,14 @@ const Footer = () => {
               </div>
 
               <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
+                <Link href="/contactus">
+                  <h6
+                    style={{ cursor: "pointer" }}
+                    className="text-uppercase fw-bold mb-4"
+                  >
+                    Contact
+                  </h6>
+                </Link>
                 <p>
                   <i className="fas fa-home me-3 text-secondary"></i> New York,
                   NY 10012, US

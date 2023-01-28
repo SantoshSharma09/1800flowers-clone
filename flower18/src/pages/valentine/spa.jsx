@@ -127,7 +127,7 @@ const Spa = ({ data }) => {
       <Box border={"0px solid blue"} ml={"20%"} width={"80%"}>
         <Grid templateColumns={"repeat(3,1fr)"} gap={6}>
           {page.map((el) => (
-            <GridItem maxW="sm">
+            <GridItem key={el.id} maxW="sm">
               <Card>
                 <CardBody>
                   <Image

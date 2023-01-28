@@ -33,10 +33,10 @@ import { MdLocalShipping } from "react-icons/md";
 import { FiChevronDown } from "react-icons/fi";
 import { BiNotepad } from "react-icons/bi";
 import { BsShop } from "react-icons/bs";
-const category = ({ data }) => {
+const Category = ({ data }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();
-  
+
   const handleAdd = async () => {
     alert("Successfully added to cart");
     await axios
@@ -239,7 +239,7 @@ const category = ({ data }) => {
     </div>
   );
 };
-export default category;
+export default Category;
 
 export async function getStaticPaths() {
   let r = await fetch(`https://fine-erin-turkey-hose.cyclic.app/Birthday`);

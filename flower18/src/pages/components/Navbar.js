@@ -4,28 +4,15 @@ import { CgProfile } from "react-icons/cg";
 import { MdOutlineLocalShipping } from "react-icons/md";
 import { CgShoppingCart } from "react-icons/cg";
 import { BiLogOut } from "react-icons/bi";
+import { GrUserAdmin } from "react-icons/gr";
 import useAuth from "./../useAuth";
 import Link from "next/link";
 import { signOut } from "firebase/auth";
-import { auth } from "./../firebase/firebase-config";
+import { auth } from "../../firebase/firebase-config";
 import { Button } from "@chakra-ui/react";
 
 export default function Navbar() {
-  const [count, setCount] = useState([]);
   const currentUser = useAuth();
-
-  console.log("cart", count);
-
-  const data = async () => {
-    let r = await fetch(`https://fine-erin-turkey-hose.cyclic.app/addtocart`);
-    let d = await r.json();
-    console.log("fetchdata", d);
-    setCount(d);
-  };
-
-  useEffect(() => {
-    data();
-  }, []);
 
   const Logout = async () => {
     try {
@@ -149,7 +136,7 @@ export default function Navbar() {
         </div>
         <div className="logoname">
           <div className="child">
-            <Link href={"/login"}>
+            <Link href={"/"}>
               <BiLogOut onClick={Logout} className="nth" />
             </Link>
 
@@ -168,7 +155,9 @@ export default function Navbar() {
           </div>
           <div className="child">
             <div>
-              <CgProfile className="nth" />
+              <Link href="/admin/Products">
+                <GrUserAdmin className="nth admin" />
+              </Link>
             </div>
             <p>Admin</p>
           </div>
@@ -177,7 +166,7 @@ export default function Navbar() {
               <div>
                 <CgShoppingCart className="nth" />
               </div>
-              <p>Cart ({count.length})</p>
+              <p>Cart</p>
             </Link>
           </div>
         </div>

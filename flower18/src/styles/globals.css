@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
@@ -104,7 +104,7 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */
 
 /* -----------------------------Navbar------------------------------- */
 .navbar {
@@ -113,7 +113,7 @@ a {
   color: white;
   position: fixed;
   top: 0;
-  margin-top:-8px;
+  margin-top: -8px;
 }
 .navbar1 {
   /* border: 1px solid red; */
@@ -208,7 +208,7 @@ a {
   margin: auto;
   margin-right: 4px;
   font-size: 28px;
-  color: gray;
+  color: black;
   cursor: pointer;
 }
 .child {
@@ -222,6 +222,7 @@ a {
   cursor: pointer;
   color: gray;
 }
+
 .child:hover,
 .nth:hover {
   color: black;
@@ -337,9 +338,9 @@ nav .wrapper {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 576px) {
- .navbar{
-  width:100%
- }
+  .navbar {
+    width: 100%;
+  }
 }
 
 /* ---------- */

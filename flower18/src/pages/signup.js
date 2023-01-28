@@ -13,7 +13,7 @@ import { signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import Image from "next/image";
 import { useState } from "react";
-import { auth, db, provider } from "./firebase/firebase-config";
+import { auth, db, provider } from "../firebase/firebase-config";
 import Link from "next/link";
 
 export default function Signup() {

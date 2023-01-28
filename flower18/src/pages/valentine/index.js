@@ -2,40 +2,36 @@ import { useState } from "react";
 import Link from "next/link";
 import { useEffect } from "react";
 import axios from "axios";
+import { FaSearch } from "react-icons/fa";
 
 const Birthday = ({ birthData }) => {
   const [page, setPage] = useState(birthData);
-  const [query, setQuery] = useState("");
+
   const [data, setData] = useState([]);
+  const [query, setQuery] = useState("");
+  const [searchData, setSearchData] = useState([]);
 
-  function FetchProduct(query) {
-    return axios.get(
-      `
-      https://mock-server-f2z5.onrender.com/Allvalentine?q=${query}
-  `
-    );
-  }
-
-  useEffect(() => {
-    FetchProduct("")
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((er) => {
-        console.log("err:", er);
-      });
-  }, []);
-
-  const handleSearch = () => {
-    FetchProduct(query)
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((err) => {
-        console.log("err:", err);
-      });
+  const SearchFetch = (query) => {
+    return axios.get(`https://fine-erin-turkey-hose.cyclic.app/all?q=${query}`);
   };
 
+  useEffect(() => {
+    SearchFetch("")
+      .then((res) => {
+        data(res.data);
+      })
+      .catch((er) => {
+        console.log("er", er);
+      });
+  }, []);
+  const handleSearch = () => {
+    SearchFetch(query)
+      .then((res) => {
+        setPage(res.data);
+      })
+      .catch((er) => console.log("err:", er));
+    setQuery("");
+  };
   const loadmore = async () => {
     const res = await fetch(
       `https://mock-server-f2z5.onrender.com/Allvalentine?_limit=6`
@@ -128,10 +124,33 @@ const Birthday = ({ birthData }) => {
             width: "15%",
             border: "1px solid black",
             marginLeft: "25px",
-            height: "500px",
+            height: "550px",
             backgroundImage: "url('/bimage.jpeg')",
           }}
         >
+          <div
+            style={{
+              textAlign: "center",
+              fontWeight: "700",
+              marginTop: "60px",
+              fontSize: "20px",
+            }}
+          >
+            <input
+              style={{
+                width: "80%",
+                border: "1px solid black",
+                outline: "none",
+              }}
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="search"
+            ></input>
+            <br />
+            <button onClick={handleSearch} style={{ outline: "none" }}>
+              {<FaSearch />}
+            </button>
+          </div>
           <div
             style={{
               textAlign: "center",
@@ -297,8 +316,9 @@ const Birthday = ({ birthData }) => {
             {page.map((el) => (
               <div key={el.id}>
                 <div>
-                  <img src={el.img} />
+                  <img alt="gsf" src={el.img} />
                   <img
+                    alt="sdg"
                     style={{ width: "40%", marginTop: "10px" }}
                     src="https://images.contentstack.io/v3/assets/bltdd99f24e8a94d536/blt8d4549d3cac15860/61e09d4f2e109d6c649d4aa4/PP_EligibleIcon.svg"
                   />

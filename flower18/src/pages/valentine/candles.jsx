@@ -18,7 +18,7 @@ import {
   GridItem,
 } from "@chakra-ui/react";
 // import {BsCircle} from "react-icons/bs"
-const Candles= ({ data }) => {
+const Candles = ({ data }) => {
   // console.log(proj)
   const [page, setPage] = useState(data);
   const loadmore = async () => {
@@ -28,7 +28,7 @@ const Candles= ({ data }) => {
     const posts = await res.json();
     setPage((val) => [...val, ...posts]);
   };
-   console.log(page)
+  console.log(page);
   return (
     <Box border={"0px solid black"} height={"700px"} display={"flex"}>
       <Box
@@ -131,7 +131,7 @@ const Candles= ({ data }) => {
       <Box border={"0px solid blue"} ml={"20%"} width={"80%"}>
         <Grid templateColumns={"repeat(3,1fr)"} gap={6}>
           {page.map((el) => (
-            <GridItem maxW="sm">
+            <GridItem key={el.id} maxW="sm">
               <Card>
                 <CardBody>
                   <Image
@@ -167,7 +167,6 @@ const Candles= ({ data }) => {
 };
 export default Candles;
 
-
 export async function getStaticProps() {
   let res = await fetch(
     `https://mock-server-f2z5.onrender.com/candles?_limit=6`
@@ -179,6 +178,3 @@ export async function getStaticProps() {
     },
   };
 }
-
-
-

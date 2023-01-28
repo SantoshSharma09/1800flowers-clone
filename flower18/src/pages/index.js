@@ -427,7 +427,7 @@ export default function Home() {
                     fontWeight: "400",
                   }}
                 >
-                  "{dat.description}"
+                  {dat.description}
                 </p>
                 <p
                   style={{
@@ -475,11 +475,11 @@ export default function Home() {
           <Box p="40px" color="black" mt="4" rounded="md" shadow="md">
             <Heading as="h4" size="14px" bg="#E8EAEC" p="10px">
               Send Flowers Online with Flower Delivery by 1-800-Flowers.com, the
-              World's Favorite Florist!
+              Worlds Favorite Florist!
             </Heading>
             <p style={{ padding: "10px", fontSize: "14px" }}>
-              There's no better place to order flowers online than
-              1-800-Flowers.com. Whether you're looking to buy flowers and gifts
+              Theres no better place to order flowers online than
+              1-800-Flowers.com. Whether youre looking to buy flowers and gifts
               like roses, orchids, gift baskets, bonsai trees, flowering plants
               or wedding bouquets, we have the highest quality blooms and the
               most talented florists who can create exactly what you order.
@@ -493,15 +493,15 @@ export default function Home() {
               Same-day flower delivery is available every day, for all seasons:
               spring, winter, summer and fall. To send flowers for same-day
               delivery, all you have to do is place your order by the following
-              times in the gift receiver's time zone: 2:30 p.m. weekdays, 1:15
+              times in the gift receivers time zone: 2:30 p.m. weekdays, 1:15
               p.m. Saturdays, and 11:45 a.m. Sundays. Our customer service team
               is standing by to help you with any gift or flower order. Whether
-              you're sending red roses to your sweetie, celebrating a birthday,
+              youre sending red roses to your sweetie, celebrating a birthday,
               or sending a get well gift to someone feeling under the weather,
               if you have questions, our team has answers! Just call
               1-800-356-9377 or place an order for flower delivery online. We
               will help you find and deliver the perfect flowers, plants, or
-              gift to celebrate life's most meaningful moments - from birthday
+              gift to celebrate lifes most meaningful moments - from birthday
               gift recommendations, to anniversary floral arrangements she is
               sure to love.
             </p>
@@ -513,13 +513,13 @@ export default function Home() {
               Order the Best Flowers Online for All Occasions and Holidays
             </Heading>
             <p style={{ padding: "10px", fontSize: "14px" }}>
-              We're the best choice when shopping online for gifts and flowers
-              just because, or for special occasions like Mother's Day or
-              Valentine's Day. Choose the perfect gift from the best selection
-              of flower arrangements, roses, mixed bouquets, fruit arrangements,
+              Were the best choice when shopping online for gifts and flowers
+              just because, or for special occasions like Mothers Day or
+              Valentines Day. Choose the perfect gift from the best selection of
+              flower arrangements, roses, mixed bouquets, fruit arrangements,
               gourmet baskets, and other gifts. With a wide variety of colors,
               sizes and seasonal themes, you can buy flowers and gifts for
-              everyone. With same-day gift delivery, we're also your source for
+              everyone. With same-day gift delivery, were also your source for
               last-minute gifts, too!
             </p>
             <p style={{ padding: "10px", fontSize: "14px" }}>
@@ -556,7 +556,7 @@ export default function Home() {
               perfect for every occasion. Ranked consecutively on the Top 1000
               list of North America’s Leading Online Retailers by Digital
               Commerce 360, 1-800-FLOWERS.COM, Inc. is proud to offer solutions
-              for every gifting need, whether you're looking for flower delivery
+              for every gifting need, whether youre looking for flower delivery
               across town or across the country.
             </p>
             <Heading as="h4" size="14px" bg="#E8EAEC" p="10px">
