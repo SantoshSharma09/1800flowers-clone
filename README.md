@@ -59,7 +59,7 @@ We made this project within the 4 days
 <br />
 
 
-## Glimpses of Nykaa-Clone :
+## Glimpses of 1800flowers-Clone :
 <table>
   <tr>
     <td><img src="https://user-images.githubusercontent.com/109611448/213923457-9a382633-b69c-4c7b-bb37-3212faacc999.png"  alt="home" /></td>
