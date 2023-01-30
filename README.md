@@ -133,8 +133,8 @@ If you want to contact us, you can reach me through below handles. <br />
 [![linkedin](https://img.shields.io/badge/Amit-Pal-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/iamitpal/)
 [![GitHub](https://img.shields.io/badge/Amit-Pal-0077B5?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/iamitpal/)
 
-[![linkedin](https://img.shields.io/badge/Jyotiranjan-JanGhibila-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/JyotiranjanGhibila/)
-[![GitHub](https://img.shields.io/badge/Jyotiranjan-JanGhibila-0077B5?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/JyotiranjanGhibila)
+[![linkedin](https://img.shields.io/badge/Jyotiranjan-Ghibila-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/JyotiranjanGhibila/)
+[![GitHub](https://img.shields.io/badge/Jyotiranjan-Ghibila-0077B5?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/JyotiranGhibila)
 
 [![linkedin](https://img.shields.io/badge/Janani-Jayaraman-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/Janani1727/)
 [![GitHub](https://img.shields.io/badge/Janani-Jayaraman-0077B5?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/Janani1727)
