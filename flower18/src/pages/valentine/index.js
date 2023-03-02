@@ -393,7 +393,7 @@ export default Birthday;
 
 export async function getStaticProps() {
   let res = await fetch(
-    `https://mock-server-f2z5.onrender.com/Allvalentine?_limit=6`
+    `https://wicked-long-underwear-slug.cyclic.app/products?_limit=6`
   );
 
   let data = await res.json();
