@@ -266,7 +266,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.PNG" />
       </Head>
-      <div style={{ marginTop: "200px" }}>
+      <div style={{ marginTop: "10px" }}>
         <div className={styles.banner1}>
           <img
             className={styles.im}

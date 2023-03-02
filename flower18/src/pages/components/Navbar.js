@@ -37,7 +37,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div style={{ width: "100%" }} className="navbar1">
+      <div style={{ width: "100%", color: "white" }} className="navbar1">
         <a>Corporate Gifts</a>
         <a>Store Locator</a>
         <a>international Delivery</a>
@@ -131,14 +131,14 @@ export default function Navbar() {
       <Flex
         px="5"
         py="3"
-        bg="blue.600"
+        bg="#65388b"
         alignItems="center"
         justifyContent="space-between"
       >
         <HStack gap="3">
           <DrawerBtn />
           <Link href="/">
-            <Heading color="#fff">ElectroGlad</Heading>
+            <Heading color="#fff">1800-Flowers</Heading>
           </Link>
         </HStack>
         <HStack gap="3" cursor="pointer">
@@ -182,7 +182,7 @@ export default function Navbar() {
       <Flex
         px="5"
         py="2"
-        bg="blue.600"
+        bg="#65388b"
         alignItems="center"
         display={{ base: "flex", lg: "none" }}
       >
