@@ -17,7 +17,7 @@ import React, { useRef } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineRight } from "react-icons/ai";
 // import { Link as RouterLink } from "react-router-dom";
-import { Link } from "next/link";
+import Link from "next/link";
 
 const DrawerBtn = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -39,7 +39,7 @@ const DrawerBtn = () => {
           <DrawerCloseButton />
           <DrawerHeader>
             <Link href="/" onClick={onClose}>
-              ElectroGlad
+              1800 Flower
             </Link>
           </DrawerHeader>
 
@@ -57,7 +57,7 @@ const DrawerBtn = () => {
               </Flex>
             </Link>
 
-            <Link href="/video">
+            <Link href={"./"}>
               <Flex
                 p="2"
                 justifyContent="space-between"
