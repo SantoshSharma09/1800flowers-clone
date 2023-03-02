@@ -25,7 +25,14 @@ const DrawerBtn = () => {
 
   return (
     <>
-      <Text ref={btnRef} p="0" color="#fff" fontSize="3xl" onClick={onOpen}>
+      <Text
+        style={{ cursor: "pointer" }}
+        ref={btnRef}
+        p="0"
+        color="#fff"
+        fontSize="3xl"
+        onClick={onOpen}
+      >
         <GiHamburgerMenu />
       </Text>
       <Drawer
@@ -35,7 +42,7 @@ const DrawerBtn = () => {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent bg="blue.600" color="#fff">
+        <DrawerContent bg="#65388b" color="#fff">
           <DrawerCloseButton />
           <DrawerHeader>
             <Link href="/" onClick={onClose}>
@@ -44,7 +51,7 @@ const DrawerBtn = () => {
           </DrawerHeader>
 
           <DrawerBody>
-            <Link href="/photography-category">
+            <Link href="/valentine">
               <Flex
                 p="2"
                 justifyContent="space-between"
@@ -52,12 +59,12 @@ const DrawerBtn = () => {
                 fontSize="lg"
                 onClick={onClose}
               >
-                <Text>Photography</Text>
+                <Text>valentine</Text>
                 <AiOutlineRight />
               </Flex>
             </Link>
 
-            <Link href={"./"}>
+            <Link href={"/flowers"}>
               <Flex
                 p="2"
                 justifyContent="space-between"
@@ -65,12 +72,12 @@ const DrawerBtn = () => {
                 fontSize="lg"
                 onClick={onClose}
               >
-                <Text>Video</Text>
+                <Text>flowers</Text>
                 <AiOutlineRight />
               </Flex>
             </Link>
 
-            <Link href="/computer">
+            <Link href="/ocassion">
               <Flex
                 p="2"
                 justifyContent="space-between"
@@ -78,7 +85,7 @@ const DrawerBtn = () => {
                 fontSize="lg"
                 onClick={onClose}
               >
-                <Text>Computers</Text>
+                <Text>Ocassion</Text>
                 <AiOutlineRight />
               </Flex>
             </Link>
@@ -91,12 +98,12 @@ const DrawerBtn = () => {
                 fontSize="lg"
                 onClick={onClose}
               >
-                <Text>Drones</Text>
+                <Text>Plants</Text>
                 <AiOutlineRight />
               </Flex>
             </Link>
 
-            <Link href="/gaming-category">
+            <Link href="/gifts">
               <Flex
                 p="2"
                 justifyContent="space-between"
@@ -104,7 +111,7 @@ const DrawerBtn = () => {
                 fontSize="lg"
                 onClick={onClose}
               >
-                <Text>Gaming</Text>
+                <Text>Gifts</Text>
                 <AiOutlineRight />
               </Flex>
             </Link>

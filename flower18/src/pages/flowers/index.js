@@ -245,7 +245,7 @@ const Birthday = ({ birthData }) => {
     <>
       <div
         style={{
-          marginTop: "200px",
+          marginTop: "10px",
           color: "#65388B",
           lineHeight: "25px",
           textAlign: "center",

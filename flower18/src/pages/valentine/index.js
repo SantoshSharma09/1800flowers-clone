@@ -60,7 +60,7 @@ const Birthday = ({ birthData }) => {
     <>
       <div
         style={{
-          marginTop: "200px",
+          marginTop: "10px",
           color: "#65388B",
           lineHeight: "25px",
           textAlign: "center",
@@ -393,11 +393,16 @@ export default Birthday;
 
 export async function getStaticProps() {
   let res = await fetch(
+
     `https://wicked-long-underwear-slug.cyclic.app/products?_limit=6`
+
+    `https://wicked-long-underwear-slug.cyclic.app/products`
+
   );
-
+  // https://wicked-long-underwear-slug.cyclic.app/?limit=12
+  // https://wicked-long-underwear-slug.cyclic.app/products
   let data = await res.json();
-
+  console.log(data);
   return {
     props: {
       birthData: data,

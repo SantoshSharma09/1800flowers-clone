@@ -337,9 +337,12 @@ nav .wrapper {
   color: white;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 576px) {
-  .navbar {
-    width: 100%;
+@media only screen and (min-width: 320px) and (max-width: 1400px) {
+  .navbar1 {
+    display: none;
+  }
+  .navbar2 {
+    display: none;
   }
 }
 
