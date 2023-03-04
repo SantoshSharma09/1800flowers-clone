@@ -10,6 +10,7 @@ import Link from "next/link";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase/firebase-config";
 import { Button } from "@chakra-ui/react";
+import styles from "../../styles/Index.module.css";
 import {
   Box,
   Flex,
@@ -22,9 +23,39 @@ import {
 import DrawerBtn from "./DrawerBtn";
 import { VscAccount } from "react-icons/vsc";
 import { FiShoppingCart } from "react-icons/fi";
+import axios from "axios";
+import SeachData from "../newvalentine/searchData";
 
 export default function Navbar() {
   const currentUser = useAuth();
+
+//Searching part here
+const [query, setQuery] = useState("");
+const [searchData, setSearchData] = useState([]);
+
+const SearchFetch = (query) => {
+  return axios.get(`https://wicked-long-underwear-slug.cyclic.app/products?q=${query}`);
+};
+
+useEffect(() => {
+  SearchFetch("")
+    .then((res) => {
+      searchData(res.data);
+    })
+    .catch((er) => {
+      console.log("er", er);
+    });
+}, []);
+const handleSearch = () => {
+  SearchFetch(query)
+    .then((res) => {
+      setSearchData(res.data);
+    })
+    
+    .catch((er) => console.log("err:", er));
+};
+//Searching part here
+
 
   const Logout = async () => {
     try {
@@ -34,7 +65,7 @@ export default function Navbar() {
       console.log(error);
     }
   };
-
+console.log("search dAta",searchData)
   return (
     <>
       <div style={{ width: "100%", color: "white" }} className="navbar1">
@@ -145,9 +176,13 @@ export default function Navbar() {
           <Input
             width="300px"
             bg="#fff"
-            placeholder="Search..."
+            
             display={{ base: "none", lg: "flex" }}
+            value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="search"
           />
+          <button onClick={handleSearch}>Search</button>
           <Link href="/login">
             <HStack color="#fff" fontSize={"3xl"} gap="0">
               <VscAccount />
@@ -188,6 +223,13 @@ export default function Navbar() {
       >
         <Input bg="#fff" placeholder="Search..."></Input>
       </Flex>
+     {/* {
+      searchData.map((el,i)=>{
+        return(
+          <SeachData key={i} img={el.img} price={el.priace} name={el.name} cate={el.category}/>
+        )
+      })
+     } */}
     </>
   );
 }
