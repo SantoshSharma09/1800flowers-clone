@@ -9,41 +9,26 @@ import {
   useColorModeValue,
   FormLabel,
 } from "@chakra-ui/react";
-import { signOut, signInWithEmailAndPassword } from "firebase/auth";
 import Image from "next/image";
-import { useState } from "react";
-import { auth, provider } from "../firebase/firebase-config";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
+import { useState } from "react";
 
-export default function Login() {
-  const [emailSignIn, setEmailSignIn] = useState("");
-  const [passwordSignIn, setPasswordSignIn] = useState("");
+export default function login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const Login = async () => {
+  const onSubmit = async () => {
     try {
-      const email = emailSignIn;
-      const password = passwordSignIn;
-
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
+      const data = await signIn("credentials", {
+        redirect: false,
         email,
-        password
-      );
-      const user = userCredential.user;
+        password,
+      });
 
-      setEmailSignIn("");
-      setPasswordSignIn("");
-    } catch (error) {
-      alert("Wrong Credentials");
-      console.log(error);
-    }
-  };
-  const Logout = async () => {
-    try {
-      await signOut(auth);
-      alert("Logout Successful");
-    } catch (error) {
-      console.log(error);
+      console.log(data);
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -79,30 +64,28 @@ export default function Login() {
               <Input
                 type={"email"}
                 placeholder="Email"
-                value={emailSignIn}
                 my="2"
-                onChange={(e) => setEmailSignIn(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </Box>
-
             <Box>
               <FormLabel>Password</FormLabel>
               <Input
                 type={"password"}
                 placeholder="password"
-                value={passwordSignIn}
                 my="2"
-                onChange={(e) => setPasswordSignIn(e.target.value)}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </Box>
-            <Link href="/">
-              <Button onClick={Login}>Login</Button>
-            </Link>
-            <Link href="/">
-              <Button my="2" onClick={Logout}>
-                Logout
-              </Button>
-            </Link>
+            <Button onClick={onSubmit}>Login</Button>
+            <Text color="white" fontSize={20}>
+              Not a member{" "}
+              <Link fontStyle="underlined" href="/signup">
+                Register
+              </Link>
+            </Text>
           </Stack>
         </Box>
       </Stack>

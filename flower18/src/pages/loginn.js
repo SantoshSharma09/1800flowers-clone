@@ -9,25 +9,39 @@ import {
   useColorModeValue,
   FormLabel,
 } from "@chakra-ui/react";
-
+import { signOut, signInWithEmailAndPassword } from "firebase/auth";
 import Image from "next/image";
 import { useState } from "react";
-import { auth, db, provider } from "../firebase/firebase-config";
+import { auth, provider } from "../firebase/firebase-config";
 import Link from "next/link";
-import axios from "axios";
 
-export default function Signup() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+export default function Login() {
+  const [emailSignIn, setEmailSignIn] = useState("");
+  const [passwordSignIn, setPasswordSignIn] = useState("");
 
-  const Signup = async () => {
-    // console.log(email, password);
+  const Login = async () => {
     try {
-      const { data } = await axios.post(`/api/register`, {
+      const email = emailSignIn;
+      const password = passwordSignIn;
+
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
         email,
-        password,
-      });
-      console.log(data);
+        password
+      );
+      const user = userCredential.user;
+
+      setEmailSignIn("");
+      setPasswordSignIn("");
+    } catch (error) {
+      alert("Wrong Credentials");
+      console.log(error);
+    }
+  };
+  const Logout = async () => {
+    try {
+      await signOut(auth);
+      alert("Logout Successful");
     } catch (error) {
       console.log(error);
     }
@@ -39,7 +53,6 @@ export default function Signup() {
       align={"center"}
       justify={"center"}
       bg={useColorModeValue("gray.50", "gray.800")}
-      mt={"1%"}
     >
       <Stack spacing={8} mx={"auto"} w={500} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
@@ -50,7 +63,7 @@ export default function Signup() {
             height={150}
           />
           <Heading fontSize={"4xl"} textAlign={"center"}>
-            Sign up
+            Login
           </Heading>
         </Stack>
         <Box
@@ -66,9 +79,9 @@ export default function Signup() {
               <Input
                 type={"email"}
                 placeholder="Email"
-                value={email}
+                value={emailSignIn}
                 my="2"
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setEmailSignIn(e.target.value)}
               />
             </Box>
 
@@ -77,25 +90,19 @@ export default function Signup() {
               <Input
                 type={"password"}
                 placeholder="password"
-                value={password}
+                value={passwordSignIn}
                 my="2"
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => setPasswordSignIn(e.target.value)}
               />
             </Box>
-            <Link href="/login">
-              <Button onClick={Signup}>Sign Up</Button>
+            <Link href="/">
+              <Button onClick={Login}>Login</Button>
             </Link>
-            {/* <Link href="/">
-              <Button
-                className="googlebtn"
-                backgroundColor={"royalblue"}
-                color={"white"}
-                my="2"
-                onClick={signInWithGoogle}
-              >
-                Sign In Google
+            <Link href="/">
+              <Button my="2" onClick={Logout}>
+                Logout
               </Button>
-            </Link> */}
+            </Link>
           </Stack>
         </Box>
       </Stack>

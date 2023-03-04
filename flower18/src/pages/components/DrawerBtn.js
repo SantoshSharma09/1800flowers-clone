@@ -51,15 +51,16 @@ const DrawerBtn = () => {
           </DrawerHeader>
 
           <DrawerBody>
-            <Link href="/valentine">
+            <Link href="/newvalentine/vallen">
               <Flex
                 p="2"
                 justifyContent="space-between"
                 alignItems="center"
                 fontSize="lg"
                 onClick={onClose}
+                style={{ cursor: "pointer" }}
               >
-                <Text>valentine</Text>
+                <Text>New valentine</Text>
                 <AiOutlineRight />
               </Flex>
             </Link>
@@ -71,6 +72,7 @@ const DrawerBtn = () => {
                 alignItems="center"
                 fontSize="lg"
                 onClick={onClose}
+                style={{ cursor: "pointer" }}
               >
                 <Text>flowers</Text>
                 <AiOutlineRight />
@@ -84,19 +86,21 @@ const DrawerBtn = () => {
                 alignItems="center"
                 fontSize="lg"
                 onClick={onClose}
+                style={{ cursor: "pointer" }}
               >
                 <Text>Ocassion</Text>
                 <AiOutlineRight />
               </Flex>
             </Link>
 
-            <Link href="/drone">
+            <Link href="/plants">
               <Flex
                 p="2"
                 justifyContent="space-between"
                 alignItems="center"
                 fontSize="lg"
                 onClick={onClose}
+                style={{ cursor: "pointer" }}
               >
                 <Text>Plants</Text>
                 <AiOutlineRight />
@@ -110,6 +114,7 @@ const DrawerBtn = () => {
                 alignItems="center"
                 fontSize="lg"
                 onClick={onClose}
+                style={{ cursor: "pointer" }}
               >
                 <Text>Gifts</Text>
                 <AiOutlineRight />
