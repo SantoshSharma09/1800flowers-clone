@@ -7,7 +7,7 @@ import { BiLogOut } from "react-icons/bi";
 import { GrUserAdmin } from "react-icons/gr";
 import useAuth from "./../useAuth";
 import Link from "next/link";
-import { signOut } from "firebase/auth";
+// import { signOut } from "firebase/auth";
 import { auth } from "../../firebase/firebase-config";
 import { Button } from "@chakra-ui/react";
 import {
@@ -22,9 +22,12 @@ import {
 import DrawerBtn from "./DrawerBtn";
 import { VscAccount } from "react-icons/vsc";
 import { FiShoppingCart } from "react-icons/fi";
+import { useSession, signOut } from "next-auth/react";
 
 export default function Navbar() {
   const currentUser = useAuth();
+  const { data } = useSession();
+  // console.log(session);
 
   const Logout = async () => {
     try {
@@ -148,29 +151,29 @@ export default function Navbar() {
             placeholder="Search..."
             display={{ base: "none", lg: "flex" }}
           />
-          <Link href="/login">
-            <HStack color="#fff" fontSize={"3xl"} gap="0">
-              <VscAccount />
-              <Box
-                w="20"
-                _hover={{ textDecoration: "underline" }}
-                display={{ base: "none", md: "block" }}
-              >
-                <Text fontSize="xs">
-                  {currentUser ? currentUser?.displayName : "Sign In"}
-                </Text>
-                <Box fontSize="sm" fontWeight="500">
-                  {/* {user ? (
-                      <Text onClick={() => dispatch(logoutUser())}>
-                        Sign Out
-                      </Text>
-                    ) : (
-                      "My Account"
-                    )} */}
-                </Box>
+
+          <HStack color="#fff" fontSize={"3xl"} gap="0">
+            <VscAccount />
+            <Box
+              w="20"
+              _hover={{ textDecoration: "underline" }}
+              display={{ base: "none", md: "block" }}
+            >
+              <Box fontSize="sm" fontWeight="500">
+                {data?.user ? (
+                  <>
+                    <Text fontSize="xs">{data?.user?.email}</Text>
+                    <Text onClick={() => signOut()}>Sign Out</Text>
+                  </>
+                ) : (
+                  <Link href={"/login"}>
+                    <Text>Login</Text>
+                  </Link>
+                )}
               </Box>
-            </HStack>
-          </Link>
+            </Box>
+          </HStack>
+
           <Link href="/cart">
             <Flex fontSize={"3xl"} color="#fff" alignItems="center" gap="2">
               <FiShoppingCart />

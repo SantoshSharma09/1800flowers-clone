@@ -21,20 +21,19 @@ const Pages = ({ data }) => {
           >
             {data.length > 0 &&
               data.map((e, i) => (
-                
                 <Box key={i}>
                   <Link href={`/newvalentine/${e._id}`}>
-                  <Box
-                    m="auto"
-                    w={{ base: "", md: "", lg: "95%" }}
-                    bg="white"
-                    padding="25px"
-                    _hover={{
-                      boxShadow: "rgba(0, 0, 0, 0.15) 0px 5px 15px 0px",
-                    }}
-                  >
-                    <Image src={e.img} w="100%" alt="img" />
-                  </Box>
+                    <Box
+                      m="auto"
+                      w={{ base: "", md: "", lg: "95%" }}
+                      bg="white"
+                      padding="25px"
+                      _hover={{
+                        boxShadow: "rgba(0, 0, 0, 0.15) 0px 5px 15px 0px",
+                      }}
+                    >
+                      <Image src={e.img} w="100%" alt="img" />
+                    </Box>
                   </Link>
                   <Text
                     textAlign={"center"}
