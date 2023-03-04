@@ -33,17 +33,19 @@ import axios from "axios";
 
 import React, { useEffect, useState } from "react";
 
-
 const SinglePage = ({ data }) => {
   const [value, setValue] = React.useState("1");
   const toast = useToast();
 
   const handleAdd = async () => {
     await axios.post(
-      `https://wicked-long-underwear-slug.cyclic.app/cart`,data
+      `https://wicked-long-underwear-slug.cyclic.app/cart/add`,data
     )
     .then((res)=>{
-      alert("Item has been added"),router.push()
+      alert("Item has been added"),router.push("/addtocart")
+    })
+    .catch((err)=>{
+      alert(err)
     })
     toast({
       title: "Item has been added to cart.",
@@ -330,7 +332,7 @@ const SinglePage = ({ data }) => {
 
             <div>
               <Button
-                onClick={() => handleAdd()}
+                onClick={handleAdd}
                 marginTop="20px"
                 marginLeft="20px"
                 w={"90%"}

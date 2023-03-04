@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
+import styles from ''
 const Search = () => {
   const [query, setQuery] = useState("");
   const [searchData, setSearchData] = useState([]);
@@ -38,7 +38,7 @@ const Search = () => {
         </div>
       
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
-        {searchData.map((e) => {
+        {/* {searchData.map((e) => {
           return (
             <div key={e.id}>
               <img src={e.img} alt="img" />
@@ -47,7 +47,15 @@ const Search = () => {
               <p>{e.category}</p>
             </div>
           );
-        })}
+        })} */}
+        <div className={styles.send}>
+            {searchData.map((dat) => (
+              <div style={{ textAlign: "center", width: "100%" }} key={dat.id}>
+                <img style={{ width: "100%" }} src={dat.img} />
+                <p>{dat.price}</p>
+              </div>
+            ))}
+          </div>
       </div>
     </div>
   );
