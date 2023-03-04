@@ -6,7 +6,7 @@ const Search = () => {
   const [searchData, setSearchData] = useState([]);
 
   const SearchFetch = (query) => {
-    return axios.get(`https://fine-erin-turkey-hose.cyclic.app/all?q=${query}`);
+    return axios.get(`https://wicked-long-underwear-slug.cyclic.app/products?q=${query}`);
   };
 
   useEffect(() => {
@@ -44,6 +44,7 @@ const Search = () => {
               <img src={e.img} alt="img" />
               <p>{e.name}</p>
               <p>{e.price}</p>
+              <p>{e.category}</p>
             </div>
           );
         })}
