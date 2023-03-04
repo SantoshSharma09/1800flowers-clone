@@ -247,7 +247,26 @@ const aboutUs = [
 export default function Home() {
   const [show, setShow] = useState(false);
   const { isOpen, onToggle } = useDisclosure();
+  const [d,setD]=useState({})
 
+  const fd=async()=>{
+    return(
+      `https://wicked-long-underwear-slug.cyclic.app/products`
+    )
+    .then((res)=>res.json())
+  }
+  useEffect(()=>{
+    handleFetch()
+  },[])
+  const handleFetch=async()=>{
+    try{
+      let res=await fd()
+        setD(res)
+    }catch(err){
+      console.log(err)
+    }
+  }
+  console.log("mil gaya bhai",d)
   useEffect(() => {
     window.addEventListener("scroll", () => {
       return window.scrollY > 500 ? setShow(true) : setShow(false);
