@@ -1,0 +1,32 @@
+.logo{
+    width:20%;
+    height:10%;
+    border:0px solid black
+}
+
+#nav{
+    position: fixed;
+    width:100%
+}
+
+.logosmall{
+    width:50%;
+    height:40%;
+    border:0px solid black;
+    display: block;
+    margin: auto;
+}
+
+.adminPanelText{
+    position: absolute;
+    top: 10px;
+    right: 37%;
+    font-size: 30px;
+    color: #9565aa;
+    
+}
+@media (max-width:700px) {
+    .adminPanelText{
+        display: none;
+    }
+}

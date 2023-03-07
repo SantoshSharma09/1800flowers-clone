@@ -1,0 +1,183 @@
+@media all and (min-width: 1024px) {
+
+.main{
+  margin-left:11%;
+       border: 0px solid red;
+       width:60%;
+       height: 200px;
+       align-items: center;
+       gap: 20px;
+       display: grid;
+       grid-template-columns: repeat(4,1fr);
+
+}
+
+.in{
+  display: flex;
+    justify-content: space-evenly;
+    border: 1px solid white;
+    width:200px;
+    height: 150px;
+    /* background-color: white; */
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+
+.on1{
+  border-radius: 50%;
+  background-color: rgb(90, 63, 209);
+  padding: 5px;
+  margin-top: 50px;
+  width: 22%;
+  height: 30%;
+  border: 0px solid pink;
+}
+
+.text{
+  font-size:30px;
+  color:white
+}
+
+
+.on2{
+  
+  padding: 3px;
+  margin-top: 30px;
+  width: 60%;
+  height: 55%;
+  border: 0px solid red;
+}
+
+.text1{
+  font-size:16px
+}
+
+
+.text2{
+  font-size:32px
+}
+}
+
+
+ @media all and (min-width: 480px) and (max-width: 900px) { 
+  .main{
+        margin-left: 20%;
+        margin-top: 40px;
+         border: 0px solid red;
+         width:60%;
+         height: 200px;
+         display: grid;
+         grid-template-columns: repeat(2,1fr);
+         gap: 20px;
+  
+  }
+  
+  .in{
+    display: flex;
+      justify-content: space-evenly;
+      border: 1px solid white;
+      width:200px;
+      height: 150px;
+  
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
+  
+  .on1{
+    border-radius: 50%;
+    background-color: 
+    #9565aa ;
+    padding: 5px;
+    margin-top: 50px;
+    width: 22%;
+    height: 30%;
+    border: 0px solid pink;
+  }
+  
+  .text{
+    font-size:30px;
+    color:white
+  }
+  
+  
+  .on2{
+    
+    padding: 3px;
+    margin-top: 30px;
+    width: 60%;
+    height: 55%;
+    border: 0px solid red;
+  }
+  
+  .text1{
+    font-size:16px
+  }
+  
+  
+  .text2{
+    font-size:32px
+  }
+  
+}   
+
+
+@media all and (min-width: 150px) and (max-width: 479px){
+  .main{
+        margin-left: 25%;
+        margin-top: 40px;
+         border: 0px solid red;
+         width:60%;
+         height: auto;
+         display: grid;
+         grid-template-columns: repeat(1,1fr);
+         gap: 20px;
+  
+  }
+  
+  .in{
+    display: flex;
+      justify-content: space-evenly;
+      border: 1px solid white;
+      width:200px;
+      height: 150px;
+  
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
+  
+  .on1{
+    border-radius: 50%;
+    background-color: #9565aa ;
+    padding: 5px;
+    margin-top: 50px;
+    width: 22%;
+    height: 30%;
+    border: 0px solid pink;
+  }
+  
+  .text{
+    font-size:30px;
+    color:white;
+    background-color: #9565aa ;
+  }
+  
+  
+  .on2{
+    
+    padding: 3px;
+    margin-top: 30px;
+    width: 60%;
+    height: 55%;
+    border: 0px solid red;
+  }
+  
+  .text1{
+    font-size:16px
+  }
+  
+  
+  .text2{
+    font-size:32px
+  }
+  
+}  
